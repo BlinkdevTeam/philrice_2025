@@ -1,0 +1,212 @@
+import Image from "next/image";
+
+export default function AboutSection() {
+  return (
+    // Section wrapper
+    <section
+      id="about"
+      className="min-h-screen w-full bg-white flex flex-col items-center justify-start pt-[84px]"
+    >
+      {/* ---------- Section 1: About the Conference ---------- */}
+      <div className="max-w-[1046px] w-full flex flex-col items-center justify-start text-center">
+        <h2 className="text-[55px] text-[#006872] leading-[60px]">
+          About the <span className="text-[#0E9046]">Conference</span>
+        </h2>
+        <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]"></div>
+
+        <p className="text-[20px] text-[#808080] leading-[130%] mt-[63px]">
+          The 36th Ugnay Palay National Rice R4D Conference arrives at a crucial
+          moment in the evolution of the Philippine rice industry. This
+          year&apos;s theme, &quot;Advancing Rice R4DE para sa Masaganang Bagong
+          Pilipinas&quot; encapsulates DA-PhilRice&apos;s commitment to driving
+          innovation, resilience, and sustainability in Philippine agriculture.
+          It reflects the Institute’s dedication to placing farmers at the core
+          of these advancements, ensuring their needs are met and their
+          livelihoods are improved as they strive for greater productivity.
+        </p>
+
+        {/* Image Grid */}
+        <div className="my-[63px]">
+          <div className="grid grid-cols-3 grid-rows-2 gap-[30px]">
+            <div className="row-span-2">
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image449.png"
+                  alt="Image 449"
+                  width={289}
+                  height={434.55}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image450.jpg"
+                  alt="Image 450"
+                  width={289}
+                  height={193}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image451.jpg"
+                  alt="Image 451"
+                  width={289}
+                  height={193}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+            <div className="col-start-2">
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image452.jpg"
+                  alt="Image 452"
+                  width={289}
+                  height={193}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+            <div className="col-start-3">
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image453.jpg"
+                  alt="Image 453"
+                  width={289}
+                  height={193}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-[20px] text-[#808080] leading-[130%] mb-[84px]">
+          This conference will serve as a pivotal platform for uniting
+          stakeholders from across the rice sector—including researchers,
+          scientists, policymakers, farmers, and industry partners—around a
+          shared mission of transforming the industry. By focusing on harnessing
+          cutting-edge advancements in rice research, technology, and
+          development (R4D), the conference aims to build on the momentum
+          initiated by the RCEF program, exploring ways to further elevate the
+          productivity and market competitiveness of Filipino farmers and
+          reinforce the Philippines&apos; standing as a global rice industry
+          leader.
+          <br />
+          <br />
+          Through collaboration and innovation, DA-PhilRice is confident in
+          securing a more resilient, sustainable, and food-secure future for all
+          Filipinos. Together, we are working toward realizing a
+          &quot;Masaganang Bagong Pilipinas,&quot; where every Filipino enjoys a
+          prosperous and secure life.
+        </p>
+      </div>
+
+      {/* ---------- Section 2: About DA-PhilRice (Full Background) ---------- */}
+      <div
+        className="relative min-h-auto w-full flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/assets/DJI_20251002142745_0207_D.JPG')",
+        }}
+      >
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-[rgba(19,67,51,0.75)]"></div>
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-[1153px] w-full flex flex-col justify-start items-center py-20">
+          <div className="w-full flex justify-between items-start">
+            <div className="flex flex-col">
+              <h2 className="text-[55px] text-white leading-[60px]">
+                About <span className="text-[#FFC200]">DA-PhilRice</span>
+              </h2>
+              <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]"></div>
+            </div>
+
+            <div className="flex justify-start items-center gap-[10px] -mt-8">
+              <img src="/assets/Rectangle.png" alt="Rectangle" />
+              <p className="text-[20px] font-bold leading-[121.227%] text-white">
+                Years of Rice Innovations: <br />
+                Sowing Progress, Harvesting Prosperity
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full grid grid-cols-2 items-start">
+            {/* Left Logo */}
+            <div className="flex justify-start ml-18">
+              <Image
+                src="/assets/logos/Asset 5@12x-8 1.png"
+                alt="Event Logo"
+                width={455}
+                height={453}
+                className="h-auto w-[455px]"
+              />
+            </div>
+
+            {/* Right Section */}
+            <div>
+              <div className="flex justify-start items-center gap-10 ml-20">
+                <Image
+                  src="/assets/logos/BAGONG PILIPINAS_EHITE 1.png"
+                  alt="Bagong Pilipinas Logo"
+                  width={82}
+                  height={76}
+                  className="h-auto w-[82px]"
+                />
+                <Image
+                  src="/assets/logos/PHILRICE LOGO.png"
+                  alt="PhilRice Logo"
+                  width={205}
+                  height={77}
+                  className="h-auto w-[205px]"
+                />
+              </div>
+
+              <div className="ml-20 mt-12 pr-12">
+                <p className="text-[20px] leading-[26px] text-white">
+                  The DA-PhilRice charter established by Executive Order No.
+                  1061 in November 1985, mandates the Institute to lead the
+                  national rice research for development and extension (R4DE)
+                  program. This initiative has been crucial in enhancing and
+                  sustaining rice production across the Philippines. Over the
+                  years, DA-PhilRice has worked closely with the Department of
+                  Agriculture (DA) and a broad network of collaborators—
+                  including state colleges and universities, local government
+                  units, the private sector, non-governmental organizations, and
+                  farmer groups—to uplift the nation’s rice farming communities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="w-[1047px] mt-12">
+            <p className="text-[20px] leading-[26px] text-white">
+              During the implementation of its Strategic Plan 2017-2022,
+              DA-PhilRice successfully navigated numerous challenges and played
+              a key role in the rollout of the Rice Competitiveness Enhancement
+              Fund (RCEF). This initiative provided Filipino rice farmers with
+              access to high-quality seeds, advanced farming technologies,
+              mechanization, and comprehensive training programs. These measures
+              were pivotal in modernizing rice farming practices, reducing
+              production costs, and increasing yields, thereby enhancing the
+              competitiveness of Filipino farmers in the global market.
+              <br />
+              <br />
+              Building on these successes, DA-PhilRice is now set to implement
+              its 2023-2028 Strategic Plan, which focuses on leveraging advanced
+              science and technology to create more prosperous and resilient
+              rice farming communities. Central to this plan is a people-centric
+              approach, aimed at improving the productivity, profitability, and
+              well-being of farmers while ensuring the long-term sustainability
+              and competitiveness of the rice industry.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

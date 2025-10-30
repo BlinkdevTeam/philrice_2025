@@ -1,0 +1,52 @@
+philrice_event_website/
+│
+├── app/
+│   ├── globals.css              # Global styles (Tailwind / CSS)
+│   ├── layout.tsx               # Root layout (Navbar + Footer)
+│   └── page.tsx                 # Main one-page event content
+│
+├── components/
+│   ├── Navbar.tsx               # Navigation bar
+│   ├── Footer.tsx               # Footer
+│   ├── HeroSection.tsx          # Hero / Banner section
+│   ├── AboutSection.tsx         # About the event
+│   ├── ProgramSection.tsx       # Program or Schedule
+│   ├── SpeakersSection.tsx      # Speakers list
+│   ├── GallerySection.tsx       # Gallery or Highlights
+│   ├── ContactSection.tsx       # Contact / Registration section
+│   └── ScrollToTop.tsx          # Optional floating "Back to top" button
+│
+├── data/
+│   ├── speakers.json            # Speaker data
+│   ├── program.json             # Program schedule
+│   └── gallery.json             # Gallery image list
+│
+├── public/
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── speakers/
+│   │   ├── sponsors/
+│   │   └── gallery/
+│   ├── favicon.ico
+│   └── logo.png
+│
+├── lib/
+│   └── utils.ts                 # Helper functions (e.g., smooth scroll)
+│
+├── styles/
+│   ├── sections.css             # Shared section spacing, animation styles
+│   └── navbar.css               # Navbar-specific styles
+│
+├── types/
+│   └── index.ts                 # Type definitions for program/speakers data
+│
+├── .env.local                   # Environment variables if needed
+├── tailwind.config.js
+├── next.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
+
+
+
+
