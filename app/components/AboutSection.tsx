@@ -28,7 +28,7 @@ export default function AboutSection() {
         {/* Image Grid */}
         <div className="my-[63px]">
           <div className="grid grid-cols-3 grid-rows-2 gap-[30px]">
-            <div className="row-span-2">
+            {/* <div className="row-span-2">
               <div className="rounded-[26px] overflow-hidden">
                 <Image
                   src="/assets/last_year_event/Image449.png"
@@ -38,7 +38,7 @@ export default function AboutSection() {
                   className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
                 />
               </div>
-            </div>
+            </div> */}
             <div>
               <div className="rounded-[26px] overflow-hidden">
                 <Image
@@ -61,7 +61,7 @@ export default function AboutSection() {
                 />
               </div>
             </div>
-            <div className="col-start-2">
+            <div className="col-start-1">
               <div className="rounded-[26px] overflow-hidden">
                 <Image
                   src="/assets/last_year_event/Image452.jpg"
@@ -72,13 +72,24 @@ export default function AboutSection() {
                 />
               </div>
             </div>
-            <div className="col-start-3">
+            <div className="col-start-2">
               <div className="rounded-[26px] overflow-hidden">
                 <Image
                   src="/assets/last_year_event/Image453.jpg"
                   alt="Image 453"
                   width={289}
                   height={193}
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                />
+              </div>
+            </div>
+            <div className="row-span-2 row-start-1 col-start-3">
+              <div className="rounded-[26px] overflow-hidden">
+                <Image
+                  src="/assets/last_year_event/Image449.png"
+                  alt="Image 449"
+                  width={289}
+                  height={434.55}
                   className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
                 />
               </div>
@@ -150,7 +161,7 @@ export default function AboutSection() {
 
             {/* Right Section */}
             <div>
-              <div className="flex justify-start items-center gap-10 ml-20">
+              {/* <div className="flex justify-start items-center gap-10 ml-20">
                 <Image
                   src="/assets/logos/BAGONG PILIPINAS_EHITE 1.png"
                   alt="Bagong Pilipinas Logo"
@@ -165,9 +176,10 @@ export default function AboutSection() {
                   height={77}
                   className="h-auto w-[205px]"
                 />
-              </div>
+              </div> */}
 
-              <div className="ml-20 mt-12 pr-12">
+              {/* <div className="ml-20 mt-12 pr-12"> */}
+              <div className="ml-20 mt-0 pr-12">
                 <p className="text-[20px] leading-[26px] text-white">
                   The DA-PhilRice charter established by Executive Order No.
                   1061 in November 1985, mandates the Institute to lead the

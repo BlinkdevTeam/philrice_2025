@@ -22,7 +22,7 @@ html {
 
 @font-face {
   font-family: "Avignon";
-  src: url("/fonts/Avignon Bold.ttf") format("truetype");
+  src: url("/fonts/avignon.bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

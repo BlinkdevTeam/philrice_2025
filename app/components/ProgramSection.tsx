@@ -67,7 +67,7 @@ export default function ProgramSection() {
                       : "bg-[#004049] text-[#006872]"
                   }`}
                 >
-                  <p className="uppercase font-bold">Day 0{index + 1}</p>
+                  <p className="uppercase font-bold text-white">Day 0{index + 1}</p>
                 </div>
                 <div
                   className={`flex justify-center items-center gap-4 row-span-2 ${

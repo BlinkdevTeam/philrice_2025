@@ -11,18 +11,11 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-white max-w-[1200px]">
-        <div className="flex">
-          <img
-              src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
-              alt="Event Logo"
-              className={`w-[160px] h-[160px] transition-all ease-in rotate-360 duration-300`}
-            />
-          <div>
-            <h1 className="text-[80px]">
-              37<sup className="align-super text-2xl">th</sup> UGNAY PALAY
-            </h1>
-            <h2 className="text-[47px] -mt-6">National Rice R4D Conference</h2>
-          </div>
+        <div className="flex flex-col">
+          <h1 className="text-[80px]">
+            37<sup className="align-super text-2xl">th</sup> UGNAY PALAY
+          </h1>
+          <h2 className="text-[47px] -mt-6">National Rice R4D Conference</h2>
         </div>
 
         <p className="text-[23.5px] font-bold leading-[137%] mt-3">
@@ -37,6 +30,12 @@ export default function HeroSection() {
             Sowing Progress, Harvesting Prosperity
           </p>
         </div>
+
+        <img
+          src="/assets/Asset 2@4x-8 1.png"
+          alt="PhilRice Design Element"
+          className="mt-4"
+        />
       </div>
 
       {/* Logo image on the right bottom */}

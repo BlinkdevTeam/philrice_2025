@@ -49,9 +49,9 @@ export default function SpeakerSection() {
       <div className="w-full">
         {/* Header */}
         <div className="text-start mb-10 pl-32 pr-40">
-          <h2 className="text-[55px] text-[#0E9046] leading-[60px]">
+          <h2 className="text-[55px] text-[#006872] leading-[60px]">
             Our Event{" "}
-            <span className="text-[#006872]">Speakers and Panelist</span>
+            <span className="text-[#0E9046]">Speakers and Panelist</span>
           </h2>
           <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]" />
         </div>

@@ -44,8 +44,13 @@ const Navbar = () => {
           onClick={() => scrollToSection("home")}
         >
           <img
-            src="/assets/Asset 2@4x-8 1.png"
-            alt="PhilRice Design Element"
+            src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
+            alt="Event Logo"
+            className={`transition-all duration-300 ${
+              isScrolled
+                ? "w-[60px] h-[60px] transition-all ease-in rotate-360 duration-300"
+                : "w-[156px] h-[156px]"
+            }`}
           />
         </div>
 
