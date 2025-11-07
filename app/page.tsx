@@ -4,7 +4,7 @@ import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import ProgramSection from "./components/ProgramSection";
 import SpeakerSection from "./components/Speakers";
-import SpeakersSlider from "./components/SpeakersSlider";
+// import SpeakersSlider from "./components/SpeakersSlider";
 import Timer from "./components/Timer";
 
 export default function Home() {

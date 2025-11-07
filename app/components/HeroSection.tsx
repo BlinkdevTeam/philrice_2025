@@ -4,19 +4,24 @@ export default function HeroSection() {
       id="home"
       className="relative w-full min-h-screen flex flex-col items-start justify-center py-24 pl-32 
                  bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: "url('/assets/4886408.jpg')" }}
+      style={{
+        backgroundImage: `
+        linear-gradient(to top, rgba(0, 104, 114, 1) 0%, rgba(0, 104, 114, 0.8) 30%, rgba(0, 104, 114, 0) 80%),
+        url('/assets/4886408.jpg')
+      `,
+      }}
     >
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-[#006872]/80"></div>
+      {/* <div className="absolute inset-0 bg-[#006872]/80"></div> */}
 
       {/* Content */}
       <div className="relative z-10 text-white max-w-[1200px]">
         <div className="flex">
           <img
-              src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
-              alt="Event Logo"
-              className={`w-[160px] h-[160px] transition-all ease-in rotate-360 duration-300`}
-            />
+            src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
+            alt="Event Logo"
+            className={`w-[160px] h-[160px] transition-all ease-in rotate-360 duration-300`}
+          />
           <div>
             <h1 className="text-[80px]">
               37<sup className="align-super text-2xl">th</sup> UGNAY PALAY
