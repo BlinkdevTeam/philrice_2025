@@ -1,173 +1,166 @@
-"use client";
-
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import Image from "next/image";
-import { speakers, type Speaker } from "../data/speakers";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import {
+  keynoteSpeakers,
+  plenarySpeakers,
+  panelSpeakers,
+  Speaker,
+} from "../data/speakers";
+import { X } from "lucide-react";
 
 export default function SpeakerSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeFilter, setActiveFilter] = useState<
+    "keynote" | "plenary" | "panel"
+  >("keynote");
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
-  const swiperRef = useRef<import("swiper").Swiper | null>(null);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (
-      !swiperRef.current ||
-      !prevRef.current ||
-      !nextRef.current ||
-      typeof swiperRef.current.params.navigation === "boolean"
-    ) {
-      return;
-    }
-
-    const nav = swiperRef.current.params.navigation as {
-      prevEl?: HTMLElement | null;
-      nextEl?: HTMLElement | null;
-    };
-
-    if (nav) {
-      nav.prevEl = prevRef.current;
-      nav.nextEl = nextRef.current;
-
-      swiperRef.current.navigation.init();
-      swiperRef.current.navigation.update();
-    }
-  }, []);
+  const displayedSpeakers =
+    activeFilter === "keynote"
+      ? keynoteSpeakers
+      : activeFilter === "plenary"
+      ? plenarySpeakers
+      : panelSpeakers;
 
   return (
     <section
       id="speaker"
       className="w-full flex justify-center items-center bg-white py-16"
     >
-      <div className="w-full">
+      <div className="max-w-[1920px] w-full">
         {/* Header */}
-        <div className="text-start mb-10 pl-32 pr-40">
-          <h2 className="text-[55px] text-[#006872] leading-[60px]">
+        <div className="text-start mb-10 px-6 md:px-32 lg:px-40">
+          <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px]">
             Our Event{" "}
-            <span className="text-[#0E9046]">Speakers and Panelist</span>
+            <span className="text-[#F58A1F]">Speakers and Panelists</span>
           </h2>
-          <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]" />
+          <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px]" />
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex items-center justify-center gap-3 mb-8 flex-wrap pl-32 pr-40">
-          <button className="bg-[#005C46] text-white font-semibold px-5 py-2 rounded-full text-sm">
+        <div className="flex items-center justify-start gap-3 mb-8 flex-wrap px-6 md:px-32 lg:px-40">
+          <button
+            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+              activeFilter === "keynote"
+                ? "bg-[#005C46] text-white"
+                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveFilter("keynote")}
+          >
             KEYNOTE SPEAKER
           </button>
-          <button className="bg-gray-100 text-gray-500 font-semibold px-5 py-2 rounded-full text-sm">
+          <button
+            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+              activeFilter === "plenary"
+                ? "bg-[#005C46] text-white"
+                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveFilter("plenary")}
+          >
             PLENARY SESSION 1
           </button>
-          <button className="bg-gray-100 text-gray-500 font-semibold px-5 py-2 rounded-full text-sm">
+          <button
+            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+              activeFilter === "panel"
+                ? "bg-[#005C46] text-white"
+                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveFilter("panel")}
+          >
             PANEL DISCUSSION 1
-          </button>
-
-          <button className="ml-auto flex items-center gap-2 bg-[#005C46] text-white font-semibold px-6 py-2 rounded-full text-sm">
-            SEE MORE <span className="text-lg">➜</span>
           </button>
         </div>
 
-        {/* Swiper Slider */}
-        <div className="relative pl-32">
+        {/* Swiper */}
+        <div className="relative px-6 md:pl-32">
           <Swiper
-            loop={true}
-            slidesPerView={4}
+            loop
+            slidesPerView={5}
             spaceBetween={20}
-            modules={[Navigation]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            className="speaker-swiper"
             breakpoints={{
               320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
+              1080: { slidesPerView: 3 },
+              1560: { slidesPerView: 5 },
             }}
           >
-            {speakers.map((speaker) => (
+            {displayedSpeakers.map((speaker) => (
               <SwiperSlide key={speaker.id}>
                 <div
                   onClick={() => setSelectedSpeaker(speaker)}
-                  className="cursor-pointer rounded-2xl overflow-hidden shadow-md transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100"
+                  className="cursor-pointer w-[272px] h-[437px] rounded-2xl shadow-lg transition-all duration-300 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 bg-white hover:bg-[#006872] flex flex-col justify-end relative overflow-hidden"
                 >
-                  <div className="relative h-[380px]">
-                    <Image
+                  {/* Overlay */}
+                  <div className="absolute bottom-0 w-full h-[60%] bg-linear-to-t from-[#007831]/80 via-[#007831]/40 to-transparent flex flex-col justify-end p-5 z-50">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">
+                      {speaker.name}
+                    </h3>
+                    <p className="text-gray-200 text-sm italic line-clamp-2">
+                      {speaker.title}
+                    </p>
+                  </div>
+
+                  {/* Image */}
+                  <div className="w-full h-[95%] mt-auto flex items-end justify-center">
+                    <img
                       src={speaker.image}
                       alt={speaker.name}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-contain"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                      <h3 className="text-white font-bold text-lg leading-tight">
-                        {speaker.name}
-                      </h3>
-                      <p className="text-gray-200 text-sm">{speaker.title}</p>
-                    </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Custom Navigation Buttons */}
-          <button
-            ref={prevRef}
-            aria-label="Previous slide"
-            className="absolute left-[50px] top-1/2 -translate-y-1/2 z-10 bg-[#005C46] hover:bg-[#007d60] text-white p-3 rounded-full shadow-lg transition"
-          >
-            <ChevronLeft size={20} />
-          </button>
-
-          <button
-            ref={nextRef}
-            aria-label="Next slide"
-            className="absolute right-[50px] top-1/2 -translate-y-1/2 z-10 bg-[#005C46] hover:bg-[#007d60] text-white p-3 rounded-full shadow-lg transition"
-          >
-            <ChevronRight size={20} />
-          </button>
         </div>
-      </div>
 
-      {/* Modal */}
-      {selectedSpeaker && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative">
-            <button
-              onClick={() => setSelectedSpeaker(null)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black"
-              aria-label="Close modal"
-            >
-              <X size={24} />
-            </button>
-            <div className="flex flex-col items-center text-center">
-              <div className="relative w-40 h-40 rounded-full overflow-hidden mb-4">
-                <Image
-                  src={selectedSpeaker.image}
-                  alt={selectedSpeaker.name}
-                  fill
-                  className="object-cover"
-                />
+        {/* Modal */}
+        {selectedSpeaker && (
+          <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-[1227px] w-full relative">
+              <button
+                onClick={() => setSelectedSpeaker(null)}
+                className="absolute top-3 right-3 text-gray-600 hover:text-black cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X size={24} />
+              </button>
+              <div className="flex w-full">
+                <div className="w-[272px] h-[437px] rounded-2xl shadow-lg transition-all duration-300 bg-[#006872] flex flex-col justify-end relative overflow-hidden">
+                  {/* Overlay */}
+                  <div className="absolute bottom-0 w-full h-[60%] bg-linear-to-t from-[#007831]/80 via-[#007831]/40 to-transparent flex flex-col justify-end p-5 z-50">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">
+                      {selectedSpeaker.name}
+                    </h3>
+                    <p className="text-gray-200 text-sm italic line-clamp-2">
+                      {selectedSpeaker.title}
+                    </p>
+                  </div>
+
+                  {/* Image */}
+                  <div className="w-full h-[94%] mt-auto flex items-end justify-center">
+                    <img
+                      src={selectedSpeaker.image}
+                      alt={selectedSpeaker.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h1 className="leading-relaxed text-[#1F773A] text-[30px]">
+                    {selectedSpeaker.presentationTitle ??
+                      "This speaker will share insights about their field of expertise and contributions to the event."}
+                  </h1>
+                  <p className="text-black leading-relaxed mt-4">
+                    {selectedSpeaker.description ??
+                      "This speaker will share insights about their field of expertise and contributions to the event."}
+                  </p>
+                </div>
               </div>
-              <h2 className="text-2xl font-bold text-[#0E9046] mb-2">
-                {selectedSpeaker.name}
-              </h2>
-              <p className="text-gray-700 mb-4">{selectedSpeaker.title}</p>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                {/* Placeholder for additional description */}
-                {selectedSpeaker.description ??
-                  "This speaker will share insights about their field of expertise and contributions to the event."}
-              </p>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }

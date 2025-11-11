@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       {/* Remove the max-width wrapper */}
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="max-w-screen w-full bg-white flex flex-col justify-center items-center">
         <HeroSection />
         <Timer />
         <AboutSection />

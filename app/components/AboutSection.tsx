@@ -5,14 +5,14 @@ export default function AboutSection() {
     // Section wrapper
     <section
       id="about"
-      className="min-h-screen w-full bg-white flex flex-col items-center justify-start pt-[84px]"
+      className=" w-full bg-white flex flex-col items-center justify-start pt-[84px]"
     >
       {/* ---------- Section 1: About the Conference ---------- */}
       <div className="max-w-[1046px] w-full flex flex-col items-center justify-start text-center">
         <h2 className="text-[55px] text-[#006872] leading-[60px]">
-          About the <span className="text-[#0E9046]">Conference</span>
+          About the <span className="text-[#F58A1F]">Conference</span>
         </h2>
-        <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]"></div>
+        <div className="w-[373px] h-[3px] bg-[#F58A1F] mt-[26px]"></div>
 
         <p className="text-[20px] text-[#808080] leading-[130%] mt-[63px]">
           The 36th Ugnay Palay National Rice R4D Conference arrives at a crucial
@@ -28,17 +28,6 @@ export default function AboutSection() {
         {/* Image Grid */}
         <div className="my-[63px]">
           <div className="grid grid-cols-3 grid-rows-2 gap-[30px]">
-            {/* <div className="row-span-2">
-              <div className="rounded-[26px] overflow-hidden">
-                <Image
-                  src="/assets/last_year_event/Image449.png"
-                  alt="Image 449"
-                  width={289}
-                  height={434.55}
-                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
-                />
-              </div>
-            </div> */}
             <div>
               <div className="rounded-[26px] overflow-hidden">
                 <Image
@@ -118,9 +107,10 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* ---------- Section 2: About DA-PhilRice (Full Background) ---------- */}
+      {/* ---------- Section 2: About DA-PhilRice (Background Image) ---------- */}
       <div
-        className="relative min-h-auto w-full flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat"
+        id="da-philrice-bg"
+        className="relative w-full flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
           backgroundImage: "url('/assets/DJI_20251002142745_0207_D.JPG')",
         }}
@@ -129,25 +119,21 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-[rgba(19,67,51,0.75)]"></div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-[1153px] w-full flex flex-col justify-start items-center py-20">
+        <div className="relative z-10 max-w-[1200px] w-full flex flex-col justify-start items-center py-20 px-4">
           <div className="w-full flex justify-between items-start">
             <div className="flex flex-col">
               <h2 className="text-[55px] text-white leading-[60px]">
-                About <span className="text-[#FFC200]">DA-PhilRice</span>
+                About <span className="text-[#F58A1F]">DA-PhilRice</span>
               </h2>
-              <div className="w-[373px] h-[3px] bg-[#FFC200] mt-[26px]"></div>
+              <div className="w-[373px] h-[3px] bg-[#F58A1F] mt-[26px]"></div>
             </div>
 
             <div className="flex justify-start items-center gap-[10px] -mt-8">
-              <img src="/assets/Rectangle.png" alt="Rectangle" />
-              <p className="text-[20px] font-bold leading-[121.227%] text-white">
-                Years of Rice Innovations: <br />
-                Sowing Progress, Harvesting Prosperity
-              </p>
+              <img src="/assets/40_years_1.png" alt="Rectangle" />
             </div>
           </div>
 
-          <div className="w-full grid grid-cols-2 items-start">
+          <div className="w-full grid grid-cols-2 items-start mt-12">
             {/* Left Logo */}
             <div className="flex justify-start ml-18">
               <Image
@@ -161,24 +147,6 @@ export default function AboutSection() {
 
             {/* Right Section */}
             <div>
-              {/* <div className="flex justify-start items-center gap-10 ml-20">
-                <Image
-                  src="/assets/logos/BAGONG PILIPINAS_EHITE 1.png"
-                  alt="Bagong Pilipinas Logo"
-                  width={82}
-                  height={76}
-                  className="h-auto w-[82px]"
-                />
-                <Image
-                  src="/assets/logos/PHILRICE LOGO.png"
-                  alt="PhilRice Logo"
-                  width={205}
-                  height={77}
-                  className="h-auto w-[205px]"
-                />
-              </div> */}
-
-              {/* <div className="ml-20 mt-12 pr-12"> */}
               <div className="ml-20 mt-0 pr-12">
                 <p className="text-[20px] leading-[26px] text-white">
                   The DA-PhilRice charter established by Executive Order No.
@@ -191,11 +159,18 @@ export default function AboutSection() {
                   including state colleges and universities, local government
                   units, the private sector, non-governmental organizations, and
                   farmer groups—to uplift the nation’s rice farming communities.
+                  <br />
+                  <br />
+                  During the implementation of its Strategic Plan 2017-2022,
+                  DA-PhilRice successfully navigated numerous challenges and
+                  played a key role in the rollout of the Rice Competitiveness
+                  Enhancement Fund (RCEF)
                 </p>
               </div>
             </div>
           </div>
-          <div className="w-[1047px] mt-12">
+
+          <div className="max-w-[1047px] mt-12 px-4">
             <p className="text-[20px] leading-[26px] text-white">
               During the implementation of its Strategic Plan 2017-2022,
               DA-PhilRice successfully navigated numerous challenges and played
@@ -219,6 +194,25 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 1930px) {
+          #da-philrice-bg {
+            max-width: 1920px;
+            height: auto;
+            border-radius: 20px;
+            background-position: top;
+            background-image: linear-gradient(
+                to top,
+                rgba(19, 67, 51, 1) 0%,
+                rgba(19, 67, 51, 0.7) 25%,
+                rgba(19, 67, 51, 0.4) 60%,
+                rgba(19, 67, 51, 0) 100%
+              ),
+              url("/assets/DJI_20251002142745_0207_D.JPG");
+          }
+        }
+      `}</style>
     </section>
   );
 }

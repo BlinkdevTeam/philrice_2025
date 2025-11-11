@@ -41,7 +41,7 @@ const Timer = () => {
 
   return (
     <div className="w-full bg-white flex justify-center items-center">
-      <div className="bg-white max-w-[1153px] w-full flex items-center justify-between gap-4 font-bold pt-[84px]">
+      <div className="bg-white max-w-[1920px] w-full flex items-center justify-between gap-4 font-bold pt-[84px] px-32">
         <div className="w-[251px] h-[215px] bg-[#006872] flex flex-col justify-center items-center text-center rounded-[26px]">
           <span className="block text-[80px] text-[#FFC200]">
             {timeLeft.days}
