@@ -70,7 +70,7 @@ h6 {
 
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {

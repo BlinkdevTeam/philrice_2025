@@ -124,7 +124,7 @@ const Footer = () => {
                   <li key={link}>
                     <button
                       onClick={() => scrollToSection(link)}
-                      className="capitalize hover:text-green-400 transition"
+                      className="uppercase hover:text-[#F58A1F] transition cursor-pointer"
                     >
                       {link}
                     </button>
@@ -138,7 +138,7 @@ const Footer = () => {
                   <li key={link}>
                     <button
                       onClick={() => scrollToSection(link)}
-                      className="capitalize hover:text-green-400 transition"
+                      className="uppercase hover:text-[#F58A1F] transition cursor-pointer"
                     >
                       {link}
                     </button>

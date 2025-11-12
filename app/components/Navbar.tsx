@@ -131,6 +131,10 @@ const Navbar = () => {
               #navbar-links button {
                 color: #006872 !important;
               }
+
+              #navbar-links button:hover {
+                color: #f58a1f !important;
+              }
             }
           `}</style>
         </nav>
