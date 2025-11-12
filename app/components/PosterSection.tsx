@@ -117,13 +117,13 @@ export default function TripleSlider() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full p-2 transition z-30"
+            className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full w-13 p-2 transition z-30"
           >
             ‹
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full p-2 transition z-30"
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full w-13 p-2 transition z-30"
           >
             ›
           </button>
