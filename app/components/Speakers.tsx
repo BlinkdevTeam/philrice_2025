@@ -3,24 +3,48 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import {
   keynoteSpeakers,
-  plenarySpeakers,
-  panelSpeakers,
+  plenarySpeakers1,
+  panelSpeakers1,
+  concurrentSession1A,
+  concurrentSession1B,
+  panelSpeakers2,
+  concurrentSession2A,
+  concurrentSession2B,
+  plenarySpeakers2,
+  panelSpeakers3,
   Speaker,
 } from "../data/speakers";
 import { X } from "lucide-react";
 
 export default function SpeakerSection() {
   const [activeFilter, setActiveFilter] = useState<
-    "keynote" | "plenary" | "panel"
+    "keynote" | "plenary1" | "panel1" | "concurrent1A" | "concurrent1B" | "panel2" | "concurrent2A" | "concurrent2B" | "plenary2" | "panel3"
   >("keynote");
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
+  const [day, setDay] = useState(0);
 
   const displayedSpeakers =
-    activeFilter === "keynote"
-      ? keynoteSpeakers
-      : activeFilter === "plenary"
-      ? plenarySpeakers
-      : panelSpeakers;
+    activeFilter === "keynote" ? keynoteSpeakers
+
+    : activeFilter === "panel1" ? panelSpeakers1
+
+    : activeFilter === "concurrent1A" ? concurrentSession1A
+
+    : activeFilter === "concurrent1B" ? concurrentSession1B
+
+    : activeFilter === "panel2" ? panelSpeakers2
+
+    : activeFilter === "plenary1" ? plenarySpeakers1
+
+    : activeFilter === "concurrent2A" ? concurrentSession2A
+
+    : activeFilter === "concurrent2B" ? concurrentSession2B
+
+    : activeFilter === "plenary2" ? plenarySpeakers2
+
+    : activeFilter === "panel3" ? panelSpeakers3
+
+    : keynoteSpeakers;
 
   return (
     <section
@@ -37,37 +61,128 @@ export default function SpeakerSection() {
           <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px]" />
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex items-center justify-start gap-3 mb-8 flex-wrap px-6 md:px-32 lg:px-40">
+        {/*Day 1 Filter Buttons */}
+        <div className={`${!day ? "flex" : "hidden"} justify-between px-6 md:px-32 lg:px-40 mb-8`}>
+          <div className={`flex items-center justify-start gap-3 flex-wrap`}>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "keynote"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("keynote")}
+            >
+              KEYNOTE SPEAKER
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "panel1"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("panel1")}
+            >
+              PANEL DISCUSSION 1
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "concurrent1A"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("concurrent1A")}
+            >
+              CONCURRENT SESSION 1A
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "concurrent1B"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("concurrent1B")}
+            >
+              CONCURRENT SESSION 1B
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "panel2"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("panel2")}
+            >
+              PANEL DISCUSSION 2
+            </button>
+          </div>
           <button
-            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
-              activeFilter === "keynote"
-                ? "bg-[#005C46] text-white"
-                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-            }`}
-            onClick={() => setActiveFilter("keynote")}
-          >
-            KEYNOTE SPEAKER
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer bg-gray-100 text-gray-500`}
+              onClick={() => setDay(1)}
+            >
+              SEE SPEAKERS FOR DAY 2
           </button>
+        </div>
+
+
+        {/*Day 2 Filter Buttons */}
+        <div className={`${!day ? "hidden" : "flex"} justify-between px-6 md:px-32 lg:px-40 mb-8`}>
+          <div className={`flex items-center justify-start gap-3 flex-wrap`}>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "plenary1"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("plenary1")}
+            >
+              PLENARY SESSION 1
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "concurrent2A"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("concurrent2A")}
+            >
+              CONCURRENT SESSION 2A
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "concurrent2B"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("concurrent2B")}
+            >
+              CONCURRENT SESSION 2B
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "plenary2"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("plenary2")}
+            >
+              PLENARY SESSION 2
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
+                activeFilter === "panel3"
+                  ? "bg-[#005C46] text-white"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveFilter("panel3")}
+            >
+              PANEL DISCUSSION 3
+            </button>
+          </div>
           <button
-            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
-              activeFilter === "plenary"
-                ? "bg-[#005C46] text-white"
-                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-            }`}
-            onClick={() => setActiveFilter("plenary")}
-          >
-            PLENARY SESSION 1
-          </button>
-          <button
-            className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer ${
-              activeFilter === "panel"
-                ? "bg-[#005C46] text-white"
-                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-            }`}
-            onClick={() => setActiveFilter("panel")}
-          >
-            PANEL DISCUSSION 1
+              className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer bg-gray-100 text-gray-500`}
+              onClick={() => setDay(0)}
+            >
+              SEE SPEAKERS FOR DAY 1
           </button>
         </div>
 

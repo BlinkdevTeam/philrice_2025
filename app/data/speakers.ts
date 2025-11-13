@@ -16,58 +16,80 @@ export type SpeakerSection = {
 export const keynoteSpeakers: Speaker[] = [
   {
     id: 1,
-    name: "Engr. Remelyn R. Recoter",
-    title: "RCEF-Seed (DA-PhilRice)",
-    image: "/assets/speakers/Speaker1.png",
+    name: "Dr. John C. de Leon",
+    title: "Executive Director, DA-PhilRice",
+    image: "/assets/speakers/John-de-Leon.png",
     description:
       "Engr. Recoter leads the RCEF-Seed Program under DA-PhilRice, overseeing innovation and sustainability in rice seed systems.",
     presentationTitle: "Innovating Rice Seed Systems for Sustainability",
   },
   {
     id: 2,
-    name: "Dr. John A. Doe",
-    title: "Senior Researcher (DA-PhilRice)",
-    image: "/assets/speakers/Speaker1.png",
+    name: "Senator Francis ‘Kiko’ N. Pangilinan",
+    title: "Chairperson, Committee on Agriculture",
+    image: "/assets/speakers/sen-kiko-pangilinan.png",
     description:
       "Dr. John A. Doe leads research and development programs for rice innovations.",
     presentationTitle: "Next-Generation Rice R&D Approaches",
   },
   {
     id: 3,
-    name: "Engr. Maria L. Santos",
-    title: "Project Leader (PhilRice Central)",
-    image: "/assets/speakers/Speaker1.png",
+    name: "Secretary Francisco P. Tiu Laurel Jr.",
+    title: "Department of Agriculture",
+    image: "/assets/speakers/Sec-Fracisco_Tiu-Laurel-Jr.png",
     description: "Leads projects and research initiatives at PhilRice Central.",
     presentationTitle: "Project Management in Agricultural Research",
   },
+];
+
+// ✅ Panel Discussion 1 Speakers
+export const panelSpeakers1: Speaker[] = [
   {
-    id: 4,
-    name: "Dr. Juan Dela Cruz",
-    title: "Agri-Tech Innovator",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Specializes in agriculture technology and innovation.",
-    presentationTitle: "Agri-Tech Solutions for Modern Farming",
+    id: 13,
+    name: "Ms. Rhemilyn Z. Relado-Sevilla",
+    title: "Chair/Moderator",
+    image: "/assets/speakers/Ms-Rhemilyn-Relado.png",
+    description: "Discusses agricultural technology trends and applications.",
+    presentationTitle: "Panel Discussion: Emerging Agri-Tech Trends",
   },
   {
-    id: 5,
-    name: "Monkey D. Luffy",
-    title: "Agriculture Specialist",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Expert in crop management and agricultural best practices.",
-    presentationTitle: "Optimizing Crop Productivity in the Field",
+    id: 14,
+    name: "Dr. Santiago R. Obien",
+    title: "DA-PhilRice",
+    image: "/assets/speakers/Dr-Santiago-Obien.png",
+    description: "Expert in seed innovation and genetic improvements.",
+    presentationTitle: "Panel Discussion: Seed Innovation for Modern Farming",
   },
   {
-    id: 6,
-    name: "Marco Polo",
-    title: "Research Consultant",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Consultant in agricultural research and development projects.",
-    presentationTitle: "Innovative Research Strategies for Agri-Consultancy",
+    id: 15,
+    name: "Dr. Leocadio S. Sebastian,",
+    title: "DAP",
+    image: "/assets/speakers/Dr-Leocadio-Sebastian.png",
+    description: "Specializes in research planning and project management.",
+    presentationTitle: "Panel Discussion: Effective Research Management",
+  },
+  {
+    id: 16,
+    name: "Dr. John C. de Leon",
+    title: "Executive Director, DA-PhilRice",
+    image: "/assets/speakers/John-de-Leon.png",
+    description:
+      "Engr. Recoter leads the RCEF-Seed Program under DA-PhilRice, overseeing innovation and sustainability in rice seed systems.",
+    presentationTitle: "Innovating Rice Seed Systems for Sustainability",
+  },
+  {
+    id: 17,
+    name: "Dr. Sailila E. Abdula",
+    title: "DA-PhilRice",
+    image: "/assets/speakers/Dr.-Sailila-Abdula.png",
+    description:
+      "Engr. Recoter leads the RCEF-Seed Program under DA-PhilRice, overseeing innovation and sustainability in rice seed systems.",
+    presentationTitle: "Innovating Rice Seed Systems for Sustainability",
   },
 ];
 
-// ✅ Plenary Session Speakers
-export const plenarySpeakers: Speaker[] = [
+// ✅ Concurrent Session 1A Speakers
+export const concurrentSession1A: Speaker[] = [
   {
     id: 7,
     name: "Dr. Alice B. Smith",
@@ -76,97 +98,89 @@ export const plenarySpeakers: Speaker[] = [
     description: "Discusses advances in rice genomics research and applications.",
     presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
+];
+
+// ✅ Concurrent Session 1B Speakers
+export const concurrentSession1B: Speaker[] = [
   {
-    id: 8,
-    name: "Dr. Bob C. Lee",
-    title: "Plenary Speaker - Agri-Tech",
+    id: 7,
+    name: "Dr. Alice B. Smith",
+    title: "Plenary Speaker - Rice Genomics",
     image: "/assets/speakers/Speaker1.png",
-    description: "Focuses on agricultural technologies and smart farming solutions.",
-    presentationTitle: "Smart Farming with Advanced Agri-Tech",
-  },
-  {
-    id: 9,
-    name: "Engr. Clara D. Tan",
-    title: "Plenary Speaker - Sustainability",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Expert on sustainable agriculture practices and innovations.",
-    presentationTitle: "Sustainable Farming Practices for the Future",
-  },
-  {
-    id: 10,
-    name: "Dr. David E. Cruz",
-    title: "Plenary Speaker - R&D",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Researcher leading R&D initiatives in rice production systems.",
-    presentationTitle: "Innovations in Rice Production Research",
-  },
-  {
-    id: 11,
-    name: "Dr. Eva F. Reyes",
-    title: "Plenary Speaker - Crop Management",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Specializes in effective crop management and productivity.",
-    presentationTitle: "Maximizing Crop Yields through Smart Management",
-  },
-  {
-    id: 12,
-    name: "Engr. Frank G. Lim",
-    title: "Plenary Speaker - Agri-Innovation",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Focuses on innovative agricultural solutions and technologies.",
-    presentationTitle: "Driving Agricultural Innovation in the 21st Century",
+    description: "Discusses advances in rice genomics research and applications.",
+    presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
 ];
 
-// ✅ Panel Discussion Speakers
-export const panelSpeakers: Speaker[] = [
+// ✅ Panel Discussion 1 Speakers
+export const panelSpeakers2: Speaker[] = [
   {
     id: 13,
-    name: "Dr. George H. Tan",
-    title: "Panelist - Agri-Tech",
-    image: "/assets/speakers/Speaker1.png",
+    name: "Ms. Rhemilyn Z. Relado-Sevilla",
+    title: "Chair/Moderator",
+    image: "/assets/speakers/Ms-Rhemilyn-Relado.png",
     description: "Discusses agricultural technology trends and applications.",
     presentationTitle: "Panel Discussion: Emerging Agri-Tech Trends",
   },
+];
+
+// ✅ Plenary Session Speakers
+export const plenarySpeakers1: Speaker[] = [
   {
-    id: 14,
-    name: "Engr. Helen I. Santos",
-    title: "Panelist - Seed Innovation",
+    id: 7,
+    name: "Dr. Alice B. Smith",
+    title: "Plenary Speaker - Rice Genomics",
     image: "/assets/speakers/Speaker1.png",
-    description: "Expert in seed innovation and genetic improvements.",
-    presentationTitle: "Panel Discussion: Seed Innovation for Modern Farming",
+    description: "Discusses advances in rice genomics research and applications.",
+    presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
+];
+
+// ✅ Concurrent Session 2A Speakers
+export const concurrentSession2A: Speaker[] = [
   {
-    id: 15,
-    name: "Dr. Ian J. Cruz",
-    title: "Panelist - Research Management",
+    id: 7,
+    name: "Dr. Alice B. Smith",
+    title: "Plenary Speaker - Rice Genomics",
     image: "/assets/speakers/Speaker1.png",
-    description: "Specializes in research planning and project management.",
-    presentationTitle: "Panel Discussion: Effective Research Management",
+    description: "Discusses advances in rice genomics research and applications.",
+    presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
+];
+
+// ✅ Concurrent Session 2B Speakers
+export const concurrentSession2B: Speaker[] = [
   {
-    id: 16,
-    name: "Dr. Julia K. Lim",
-    title: "Panelist - Sustainable Farming",
+    id: 7,
+    name: "Dr. Alice B. Smith",
+    title: "Plenary Speaker - Rice Genomics",
     image: "/assets/speakers/Speaker1.png",
-    description: "Focuses on sustainable farming methods and strategies.",
-    presentationTitle: "Panel Discussion: Sustainable Farming Solutions",
+    description: "Discusses advances in rice genomics research and applications.",
+    presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
+];
+
+// ✅ Plenary Session Speakers 2
+export const plenarySpeakers2: Speaker[] = [
   {
-    id: 17,
-    name: "Engr. Kevin L. Reyes",
-    title: "Panelist - Crop Technology",
+    id: 7,
+    name: "Dr. Alice B. Smith",
+    title: "Plenary Speaker - Rice Genomics",
     image: "/assets/speakers/Speaker1.png",
-    description: "Expert in crop technology and modern farming solutions.",
-    presentationTitle: "Panel Discussion: Advances in Crop Technology",
+    description: "Discusses advances in rice genomics research and applications.",
+    presentationTitle: "Rice Genomics: Unlocking Genetic Potential",
   },
+];
+
+// ✅ Panel Discussion 3 Speakers
+export const panelSpeakers3: Speaker[] = [
   {
-    id: 18,
-    name: "Dr. Laura M. Tan",
-    title: "Panelist - Agri-Research",
-    image: "/assets/speakers/Speaker1.png",
-    description: "Leads research in agriculture and crop management techniques.",
-    presentationTitle: "Panel Discussion: Agri-Research Innovations",
+    id: 13,
+    name: "Ms. Rhemilyn Z. Relado-Sevilla",
+    title: "Chair/Moderator",
+    image: "/assets/speakers/Ms-Rhemilyn-Relado.png",
+    description: "Discusses agricultural technology trends and applications.",
+    presentationTitle: "Panel Discussion: Emerging Agri-Tech Trends",
   },
 ];
 
@@ -177,11 +191,39 @@ export const speakerSections: SpeakerSection[] = [
     speakers: keynoteSpeakers,
   },
   {
-    sectionTitle: "Plenary Session Speakers",
-    speakers: plenarySpeakers,
+    sectionTitle: "Panel Discussion 1 Speakers",
+    speakers: panelSpeakers1,
   },
   {
-    sectionTitle: "Panel Discussion Speakers",
-    speakers: panelSpeakers,
+    sectionTitle: "Concurrent Session 1A Speakers",
+    speakers: concurrentSession1A,
+  },
+  {
+    sectionTitle: "Concurrent Session 1B Speakers",
+    speakers: concurrentSession1B,
+  },
+  {
+    sectionTitle: "Panel Discussion 2 Speakers",
+    speakers: panelSpeakers2,
+  },
+  {
+    sectionTitle: "Plenary Session 1 Speakers",
+    speakers: plenarySpeakers1,
+  },
+  {
+    sectionTitle: "Concurrent Session 2A",
+    speakers: concurrentSession2A,
+  },
+  {
+    sectionTitle: "Concurrent Session 2B",
+    speakers: concurrentSession2B,
+  },
+  {
+    sectionTitle: "Plenary Session 2 Speakers",
+    speakers: plenarySpeakers2,
+  },
+  {
+    sectionTitle: "Panel Discussion 3 Speakers",
+    speakers: panelSpeakers3,
   },
 ];
