@@ -82,3 +82,8 @@ h6 {
   background: #004f5a;
   border-radius: 4px;
 }
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
