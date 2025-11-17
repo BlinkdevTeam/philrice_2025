@@ -2,10 +2,8 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative max-w-[1920px] w-full flex flex-col items-start justify-start pl-32 overflow-hidden"
-      style={{ height: "900px" }}
+      className="relative max-w-[1920px] w-full h-[590px] sm:h-[670px] md:h-[750] lg:h-[850px] xl:h-[900px] flex flex-col justify-start items-center lg:items-start lg:justify-start pl-4 pr-4 lg:pr-0 lg:pl-32 overflow-hidden"
     >
-      {/* Background image + gradient overlay */}
       <div
         id="bg-image"
         className="absolute top-0 left-0 right-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden"
@@ -17,49 +15,55 @@ export default function HeroSection() {
           backgroundPosition: "top",
         }}
       >
-        {/* Bottom-right logo inside bg-image */}
         <img
           src="/assets/PHILRICE_UGNAY_PALAY_2025_BUMPER_STUDY2.png"
           alt="Philrice"
-          className="absolute -bottom-14 right-0 max-w-[1920px] w-full h-auto"
+          className="absolute -bottom-1 xl:-bottom-14 right-0 min-w-[530px] max-w-[1920px] w-full h-auto"
         />
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col gap-16 mt-52">
+      <div className="flex flex-col gap-16 mt-20 sm:mt-25 lg:mt-26 xl:mt-52">
         <div>
           <div className="relative z-10 max-w-[1200px] text-[#006872]">
-            <div className="flex items-center gap-4">
+            <div className="flex justify-center items-cente gap-4">
               <img
                 src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
                 alt="Event Logo"
-                className="w-[160px] h-[160px] leading-0"
+                className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[125px] lg:h-[125px] xl:w-[160px] xl:h-[160px] leading-0"
               />
               <div>
-                <h1 className="text-[110px] leading-20">
-                  37<sup className="align-super text-2xl">th</sup>
+                <h1 className="text-[46px] sm:text-[66px] lg:text-[82px] xl:text-[110px] leading-10 sm:leading-13 lg:leading-20">
+                  37<sup className="align-super text-xl md:text-2xl">th</sup>
                 </h1>
-                <h2 className="text-[72px] leading-20">UGNAY PALAY</h2>
+                <h2 className="text-[30px] sm:text-[43px] lg:text-[62px] xl:text-[72px] leading-10 sm:leading-13 lg:leading-20">
+                  UGNAY PALAY
+                </h2>
               </div>
             </div>
-            <h3 className="text-[42px] mt-0">National Rice R4D Conference</h3>
+            <h3 className="text-[18px] sm:text-[28px] lg:text-[42px] text-center lg:text-center mt-6 lg:mt-0">
+              National Rice R4D Conference
+            </h3>
           </div>
-          <div className="relative w-auto h-auto bg-[#006872] px-6 py-2 mt-3 -ml-6">
-            <p className="text-[23.5px] font-bold leading-[137%] text-[#ffffff]">
+          <div className="relative w-auto h-auto bg-[#006872] px-6 py-2 mt-6 lg:mt-3 ml-0 lg:-ml-6">
+            <p className="text-[10px] sm:text-[16px] lg:text-[23.5px] text-center lg:text-start font-bold leading-[137%] text-[#ffffff]">
               25 - 27 November 2025 | CBC Plenary Hall | DA-PhilRice CES
             </p>
           </div>
         </div>
 
-        <div className="relative flex justify-start items-center gap-4 mt-4">
-          <img src="/assets/40_years_1.png" alt="orange 40 years" />
+        <div className="relative flex justify-center items-center gap-4 -mt-10 lg:mt-4">
+          <img
+            src="/assets/40_years_1.png"
+            alt="orange 40 years"
+            className="max-w-[188px] sm:max-w-[230px] lg:max-w-[288px] w-full"
+          />
         </div>
       </div>
 
       <style jsx>{`
         @media (min-width: 1930px) {
           #bg-image {
-            height: 810px; /* crop background */
+            height: 810px;
             border-radius: 20px;
             background-image: linear-gradient(
                 to top,
@@ -67,7 +71,7 @@ export default function HeroSection() {
                 rgba(0, 104, 114, 0.6) 20%,
                 rgba(0, 104, 114, 0) 100%
               ),
-              url("/assets/4886408.jpg"); /* gradient stops changed */
+              url("/assets/4886408.jpg");
             margin-top: 88px;
           }
 

@@ -87,3 +87,24 @@ h6 {
   display: flex !important;
   justify-content: center !important;
 }
+
+.poster-img {
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  transition: filter 0.3s, transform 0.3s;
+  filter: blur(2px);
+  /* default blur for all slides */
+  transform: scale(2.05);
+  box-shadow: #0a0a0a;
+    /* shrink non-active slides */
+}
+
+/* Active slide is clear and pops forward */
+.swiper-slide-active .poster-img {
+  filter: blur(0);
+  transform: scale(1);
+  /* slightly bigger for emphasis */
+  z-index: 10;
+}

@@ -37,7 +37,7 @@ export default function LocationSection() {
   return (
     <section
       id="venue"
-      className="w-full bg-white flex flex-col items-center justify-start py-[84px]"
+      className="w-full bg-white flex flex-col items-center justify-start pt-[84px] pb-[42px]"
     >
       {/* ---------- Section: DA-PhilRice (Layered Full Image Responsive) ---------- */}
       <div

@@ -12,7 +12,7 @@ export default function AboutSection() {
         <h2 className="text-[55px] text-[#006872] leading-[60px]">
           About the <span className="text-[#F58A1F]">Conference</span>
         </h2>
-        <div className="w-[373px] h-[3px] bg-[#F58A1F] mt-[26px]"></div>
+        <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] mt-[26px]"></div>
 
         <p className="text-[20px] text-[#808080] leading-[130%] mt-[63px]">
           The 36th Ugnay Palay National Rice R4D Conference arrives at a crucial

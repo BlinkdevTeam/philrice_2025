@@ -13,12 +13,12 @@ const Footer = () => {
   const usefulLinksCol2 = ["venue", "posters", "faqs"];
 
   return (
-    <footer className="relative w-full bg-[#1A1A1A] shadow flex justify-center pt-[63px] pb-[53px] pl-32 pr-16">
-      <div className="grid grid-cols-2 gap-6 w-full">
+    <footer className="relative w-full bg-[#1A1A1A] shadow flex justify-center pt-[63px] pb-[53px] pl-16 lg:pl-32 pr-16">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 w-full">
         {/* Left Side */}
         <div className="flex flex-col gap-[33px]">
           {/* Logo */}
-          <div className="relative w-[475px] h-[135px]">
+          <div className="relative max-w-[475px] h-[135px] w-full mb-8 lg:mb-0">
             <Image
               src="/assets/logos/Asset 5@12x-8 2.png"
               alt="Philippine Rice Research Institute"
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
 
           {/* Text */}
-          <div className="flex w-full">
+          <div className="hidden lg:flex w-full">
             <p className="text-[#D9D9D9] text-[20px] leading-[130%]">
               PHILRICE © 2024. All rights reserved.
               <br />
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Contact Info */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-[9px]">
@@ -146,6 +146,14 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
+          </div>
+          {/* Text */}
+          <div className="flex lg:hidden w-full justify-center items-center mt-8">
+            <p className="text-[#D9D9D9] text-[16px] text-center leading-[130%]">
+              PHILRICE © 2024. All rights reserved.
+              <br />
+              Powered by BLINK CREATIVE STUDIO
+            </p>
           </div>
           {/* Scroll to Top Button */}
           <div
