@@ -3,7 +3,7 @@ export const questions = [
   {
     question: "When and where is the conference taking place?",
     answer:
-      "The 36th Ugnay Palay National Rice R4D Conference will be held on 3-5 December 2024. In-person participants will be gathered at the DA-Crop Biotechnology Center Plenary Hall, DA-PhilRice in Nueva Ecija.",
+      "The 36th Ugnay Palay National Rice R4D Conference will be held on 25-27 November 2025. In-person participants will be gathered at the DA-Crop Biotechnology Center Plenary Hall, DA-PhilRice in Nueva Ecija.",
   },
   {
     question: "Who should attend the conference?",
@@ -40,7 +40,7 @@ export const questions = [
   {
     question: "When is the deadline for registration?",
     answer:
-      "Participant registration will be open until the second week of November 2024.",
+      "Participant registration will be open until the second week of November 2025.",
   },
   {
     question: "Can I present at the conference?",

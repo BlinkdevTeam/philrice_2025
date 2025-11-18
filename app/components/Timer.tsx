@@ -24,7 +24,6 @@ const Timer = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // ✅ Defer the state update to avoid synchronous effect update
     const timeout = setTimeout(() => setIsClient(true), 0);
 
     const timer = setInterval(() => {
@@ -37,39 +36,56 @@ const Timer = () => {
     };
   }, []);
 
-  if (!isClient) return null; // ⛔ Avoid hydration mismatch
+  if (!isClient) return null;
 
   return (
-    <div className="w-full bg-white flex justify-center items-center">
-      <div className="bg-white max-w-[1920px] w-full flex items-center justify-between gap-4 font-bold pt-[84px] px-32">
-        <div className="w-[251px] h-[215px] bg-[#006872] flex flex-col justify-center items-center text-center rounded-[26px]">
-          <span className="block text-[80px] text-[#FFC200]">
+    <div className="w-full bg-white flex justify-center items-center py-12">
+      <div className="bg-white w-full max-w-[1920px] flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 px-4 sm:px-8">
+        {/* Days */}
+        <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.days}
           </span>
-          <span className="text-[23.5px] text-white uppercase">Days</span>
+          <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
+            Days
+          </span>
         </div>
-        <div className="w-[251px] h-[215px] bg-[#006872] flex flex-col justify-center items-center text-center rounded-[26px]">
-          <span className="block text-[80px] text-[#FFC200]">
+
+        {/* Hours */}
+        <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.hours}
           </span>
-          <span className="text-[23.5px] text-white uppercase">Hours</span>
+          <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
+            Hours
+          </span>
         </div>
+
+        {/* Logo */}
         <img
           src="/assets/logos/6533772d20b398bc3050934c63409508e31649c2.png"
           alt="Event Logo"
-          className="w-[101px] h-auto"
+          className="w-[80px] sm:w-[90px] md:w-[101px] h-auto"
         />
-        <div className="w-[251px] h-[215px] bg-[#006872] flex flex-col justify-center items-center text-center rounded-[26px]">
-          <span className="block text-[80px] text-[#FFC200]">
+
+        {/* Minutes */}
+        <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.minutes}
           </span>
-          <span className="text-[23.5px] text-white uppercase">Minutes</span>
+          <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
+            Minutes
+          </span>
         </div>
-        <div className="w-[251px] h-[215px] bg-[#006872] flex flex-col justify-center items-center text-center rounded-[26px]">
-          <span className="block text-[80px] text-[#FFC200]">
+
+        {/* Seconds */}
+        <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.seconds}
           </span>
-          <span className="text-[23.5px] text-white uppercase">Seconds</span>
+          <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
+            Seconds
+          </span>
         </div>
       </div>
     </div>

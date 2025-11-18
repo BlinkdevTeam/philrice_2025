@@ -37,7 +37,7 @@ export default function LocationSection() {
   return (
     <section
       id="venue"
-      className="w-full bg-white flex flex-col items-center justify-start py-[84px]"
+      className="w-full bg-white flex flex-col items-center justify-start pt-[84px] pb-[42px]"
     >
       {/* ---------- Section: DA-PhilRice (Layered Full Image Responsive) ---------- */}
       <div
@@ -49,12 +49,12 @@ export default function LocationSection() {
           src="/assets/map1.png"
           alt="DA-PhilRice Map"
           fill
-          className="object-fill object-center"
+          className="object-cover object-center"
           priority
         />
 
         {/* ✅ Top-right buttons */}
-        <div className="absolute top-6 right-6 flex flex-col gap-3 z-20">
+        <div className="absolute top-2 right-2 md:top-6 md:right-6 flex flex-col gap-3 z-20">
           {/* Fullscreen Button */}
           <button
             onClick={handleFullscreen}
@@ -75,16 +75,16 @@ export default function LocationSection() {
         </div>
 
         {/* Content Layer (Bottom Left Corner, Responsive) */}
-        <div className="absolute bottom-16 left-32 z-10 flex flex-col items-start justify-end">
-          <div className="bg-[#006872]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-10 max-w-[90%] sm:max-w-[600px]">
-            <h2 className="text-[40px] sm:text-[55px] text-white leading-tight sm:leading-[60px]">
+        <div className="absolute bottom-2 left-2 md:bottom-16 md:left-32 z-10 flex flex-col items-start justify-end">
+          <div className="bg-[#006872]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-10 max-w-[90%] md:max-w-[600px]">
+            <h2 className="text-[28px] sm:text-[40px] lg:text-[55px] text-white leading-tight sm:leading-[60px]">
               Conference
               <br />
               <span className="text-[#F58A1F]">Program</span>
             </h2>
             <div className="w-[200px] sm:w-[373px] h-[3px] bg-[#F58A1F] mt-4 sm:mt-[26px] mb-6 sm:mb-8"></div>
 
-            <p className="text-white text-base sm:text-lg leading-relaxed">
+            <p className="text-white text-[12px] sm:text-[14px] lg:text-[18px] leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Nec adipiscing aliquet
               integer adipiscing pulvinar.
             </p>

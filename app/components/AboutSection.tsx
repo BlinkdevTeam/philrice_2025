@@ -5,16 +5,16 @@ export default function AboutSection() {
     // Section wrapper
     <section
       id="about"
-      className=" w-full bg-white flex flex-col items-center justify-start pt-[84px]"
+      className=" w-full bg-white flex flex-col items-center justify-start pt-[64px] sm:pt-[84px]"
     >
       {/* ---------- Section 1: About the Conference ---------- */}
-      <div className="max-w-[1046px] w-full flex flex-col items-center justify-start text-center">
-        <h2 className="text-[55px] text-[#006872] leading-[60px]">
+      <div className="max-w-[1046px] w-full flex flex-col items-center justify-start text-center px-4 md:px-2">
+        <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-[60px]">
           About the <span className="text-[#F58A1F]">Conference</span>
         </h2>
-        <div className="w-[373px] h-[3px] bg-[#F58A1F] mt-[26px]"></div>
+        <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] mt-[26px]"></div>
 
-        <p className="text-[20px] text-[#808080] leading-[130%] mt-[63px]">
+        <p className="text-[16px] sm:text-[20px] text-[#808080] leading-[130%] mt-12 sm:mt-[63px]">
           The 36th Ugnay Palay National Rice R4D Conference arrives at a crucial
           moment in the evolution of the Philippine rice industry. This
           year&apos;s theme, &quot;Advancing Rice R4DE para sa Masaganang Bagong
@@ -27,7 +27,7 @@ export default function AboutSection() {
 
         {/* Image Grid */}
         <div className="my-[63px]">
-          <div className="grid grid-cols-3 grid-rows-2 gap-[30px]">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-[30px]">
             <div>
               <div className="rounded-[26px] overflow-hidden">
                 <Image
@@ -73,20 +73,20 @@ export default function AboutSection() {
               </div>
             </div>
             <div className="row-span-2 row-start-1 col-start-3">
-              <div className="rounded-[26px] overflow-hidden">
+              <div className="rounded-[26px] h-[191.69px] sm:h-full overflow-hidden">
                 <Image
                   src="/assets/last_year_event/Image449.png"
                   alt="Image 449"
                   width={289}
                   height={434.55}
-                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300"
+                  className="scale-100 hover:scale-105 transition-all ease-in-out duration-300 -translate-y-14 sm:translate-y-0"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <p className="text-[20px] text-[#808080] leading-[130%] mb-[84px]">
+        <p className="text-[16px] sm:text-[20px] text-[#808080] leading-[130%] mb-16 sm:mb-[84px]">
           This conference will serve as a pivotal platform for uniting
           stakeholders from across the rice sector—including researchers,
           scientists, policymakers, farmers, and industry partners—around a
@@ -119,36 +119,37 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-[rgba(19,67,51,0.75)]"></div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-[1200px] w-full flex flex-col justify-start items-center py-20 px-4">
-          <div className="w-full flex justify-between items-start">
-            <div className="flex flex-col">
-              <h2 className="text-[55px] text-white leading-[60px]">
+        <div className="relative z-10 max-w-[1200px] w-full flex flex-col justify-start items-center py-20 px-4 sm:px-2">
+          <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
+              <h2 className="text-[46px] sm:text-[55px] text-white text-center lg:text-start leading-[60px]">
                 About <span className="text-[#F58A1F]">DA-PhilRice</span>
               </h2>
-              <div className="w-[373px] h-[3px] bg-[#F58A1F] mt-[26px]"></div>
+              <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] mt-[26px]"></div>
             </div>
 
-            <div className="flex justify-start items-center gap-[10px] -mt-8">
-              <img src="/assets/40_years_1.png" alt="Rectangle" />
+            <div className="flex justify-start items-center gap-[10px] mt-8 lg:-mt-8">
+              <img
+                src="/assets/40_years_1.png"
+                alt="orange 40 years"
+                className="max-w-[230px] sm:max-w-[230px] lg:max-w-[455px] w-full"
+              />
             </div>
           </div>
 
-          <div className="w-full grid grid-cols-2 items-start mt-12">
-            {/* Left Logo */}
-            <div className="flex justify-start ml-18">
-              <Image
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-2 items-start mt-12">
+            <div className="w-full flex justify-center lg:justify-start ml-0 lg:ml-18 mt-12 lg:mt-0 order-2 lg:order-1">
+              <img
                 src="/assets/logos/Asset 5@12x-8 1.png"
-                alt="Event Logo"
-                width={455}
-                height={453}
-                className="h-auto w-[455px]"
+                alt="orange 40 years"
+                className="max-w-[280px] md:max-w-[300px] lg:max-w-[455px] w-full"
               />
             </div>
 
             {/* Right Section */}
-            <div>
-              <div className="ml-20 mt-0 pr-12">
-                <p className="text-[20px] leading-[26px] text-white">
+            <div className="order-1 lg:order-2">
+              <div className="ml-0 lg:ml-20 mt-0 px-4 lg:pr-12">
+                <p className="text-[16px] sm:text-[20px] leading-[26px] text-white text-center lg:text-start">
                   The DA-PhilRice charter established by Executive Order No.
                   1061 in November 1985, mandates the Institute to lead the
                   national rice research for development and extension (R4DE)
@@ -170,8 +171,8 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="max-w-[1047px] mt-12 px-4">
-            <p className="text-[20px] leading-[26px] text-white">
+          <div className="max-w-[1047px] mt-12 px-0 sm:px-4">
+            <p className="text-[16px] sm:text-[20px] leading-[26px] text-white text-center lg:text-start">
               During the implementation of its Strategic Plan 2017-2022,
               DA-PhilRice successfully navigated numerous challenges and played
               a key role in the rollout of the Rice Competitiveness Enhancement

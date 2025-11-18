@@ -1,134 +1,85 @@
 "use client";
 
-import { useState, useRef } from "react";
-import Image from "next/image";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import "../globals.css";
+import { Maximize2 } from "lucide-react";
+import { useRouter } from "next/navigation"; // <-- import useRouter
 
-export default function TripleSlider() {
-  const posters = [
-    "/assets/posters/sample_1.jpg",
-    "/assets/posters/sample_2.jpg",
-    "/assets/posters/sample_3.jpg",
-  ];
+export default function PosterSection() {
+  const posterUrl =
+    "https://sfvideo.blob.core.windows.net/sitefinity/images/default-source/default-album/decoded-temp-image-storage/23-idt-scientific-poster-template-with-labels.jpg?sfvrsn=c6a9f207_6";
 
-  const [current, setCurrent] = useState(0);
-  const total = posters.length;
+  const router = useRouter(); // <-- initialize router
 
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const startX = useRef(0);
-  const isDragging = useRef(false);
-
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % total);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    isDragging.current = true;
-    startX.current = e.clientX;
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current) return;
-  };
-
-  const handleMouseUp = (e: React.MouseEvent) => {
-    if (!isDragging.current) return;
-    const diff = e.clientX - startX.current;
-    if (diff > 50) prevSlide();
-    if (diff < -50) nextSlide();
-    isDragging.current = false;
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    startX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const diff = e.changedTouches[0].clientX - startX.current;
-    if (diff > 50) prevSlide();
-    if (diff < -50) nextSlide();
-  };
-
-  const getTransform = (index: number) => {
-    const distance = (index - current + total) % total;
-    if (distance === 0)
-      return { translateX: 0, scale: 1, opacity: 1, zIndex: 20, blur: 0 };
-    if (distance === 1 || distance === -(total - 1))
-      return { translateX: 300, scale: 0.9, opacity: 0.6, zIndex: 10, blur: 2 };
-    if (distance === total - 1 || distance === -1)
-      return {
-        translateX: -300,
-        scale: 0.9,
-        opacity: 0.6,
-        zIndex: 10,
-        blur: 2,
-      };
-    return { translateX: 0, scale: 0, opacity: 0, zIndex: 0, blur: 0 };
+  // Navigate to Posters page
+  const handleFullscreen = () => {
+    router.push("/Posters");
   };
 
   return (
-    <section
-      id="posters"
-      className="w-full flex flex-col items-center bg-white py-16 px-4 sm:px-6 lg:px-12"
-    >
-      <div className="max-w-[1920px] w-full px-6 md:px-32 lg:px-40 mb-10">
-        <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
-          List of <span className="text-[#F58A1F]">Posters</span>
-        </h2>
-        <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px]" />
-      </div>
-
-      {/* Slider: centered */}
-      <div className="w-full flex justify-center">
-        <div
-          ref={sliderRef}
-          className="relative w-full max-w-[1120px] h-[800px] flex items-center justify-center cursor-grab select-none"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={() => (isDragging.current = false)}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {posters.map((src, index) => {
-            const { translateX, scale, opacity, zIndex, blur } =
-              getTransform(index);
-            return (
-              <div
-                key={index}
-                style={{
-                  transform: `translateX(${translateX}px) scale(${scale})`,
-                  opacity,
-                  zIndex,
-                  filter: `blur(${blur}px)`,
-                  transition: "all 0.7s ease-in-out",
-                  position: "absolute",
-                }}
-                className="rounded-2xl overflow-hidden shadow-xl w-[912px] h-[502px]"
-              >
-                <Image
-                  src={src}
-                  alt={`Poster ${index + 1}`}
-                  fill
-                  className="rounded-2xl object-cover w-full h-full"
-                />
+    <div className="w-full bg-white flex flex-col items-center justify-start">
+      <section
+        id="posters"
+        className="bg-white text-white w-full flex flex-col items-center justify-center py-10 px-4"
+      >
+        <div className="relative w-full max-w-[1920px] flex flex-col items-center sm:items-start flex-1 overflow-visible mt-8 z-10 md:px-32 lg:px-40 mb-10">
+          {/* ✅ Top-right buttons */}
+          <div className="absolute top-32 right-2 sm:top-6 sm:right-6 flex flex-col gap-3 z-20">
+            {/* Fullscreen Button */}
+            <button
+              onClick={handleFullscreen}
+              className="flex items-center justify-center w-6 h-6 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
+              title="View Fullscreen"
+            >
+              <div className="hidden sm:block">
+                <Maximize2 size={20} />
               </div>
-            );
-          })}
+              <div className="block sm:hidden">
+                <Maximize2 size={14} />
+              </div>
+            </button>
+          </div>
 
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full w-13 p-2 transition z-30"
+          <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
+            List of <span className="text-[#F58A1F]">Posters</span>
+          </h2>
+          <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
+
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            loop={true}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 1920,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            pagination={{ clickable: true }}
+            modules={[EffectCoverflow, Pagination]}
+            className="mySwiper"
           >
-            ‹
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-3xl bg-[#00000060] hover:bg-[#00000080] rounded-full w-13 p-2 transition z-30"
-          >
-            ›
-          </button>
+            {/* 5 slides manually */}
+            {[1, 2, 3, 4, 5].map((i) => (
+              <SwiperSlide key={i} className="flex justify-center">
+                <img
+                  src={posterUrl}
+                  className="poster-img"
+                  alt={`Poster ${i}`}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

@@ -1,10 +1,11 @@
 export interface ProgramItem {
-  time: string;
+  time?: string;
   title: string;
   details?: string[];
   chair?: string;
   speaker?: string;
   position?: string;
+  panel?: string[];
 }
 
 export interface ProgramDay {
@@ -23,71 +24,64 @@ export const programData: ProgramDay[] = [
         title: "Registration of Participants and Welcome Coffee",
       },
       {
-        time: "08:00 AM",
+        time: "09:00 AM",
         title: "Opening Program",
         details: [
-          "Invocation",
-          "National Anthem",
-          "Welcome Remarks",
-          "Introduction of the Guest of Honor and Keynote Speaker",
-          "Keynote Address: 'Empowering Farmers through Innovation'",
-          "Turnover of BPI Foundation Grant",
-          "Launch of New DA-PhilRice Knowledge Products",
-          "Opening and Viewing of Posters and Exhibits",
+          "Invocation and National Anthem",
+          "Be RICEponsible Pledge",
+          "Welcome Remarks and Introduction of the Guest of Honor and Keynote Speakers",
+          "Messages of the Guests of Honor and Keynote Speakers",
+          "Presentation of New Knowledge Products",
+          "Launching of the RiceBIS Magsasaka Network",
+          "Opening and viewing of e-posters ",
         ],
       },
       {
-        time: "09:30 AM",
-        title: "Networking Break and Poster Viewing",
-      },
-      {
         time: "10:00 AM",
-        title: "PLENARY SESSION 1 — Cutting-edge Rice R4D Innovations",
-        chair: "Dr. Eduardo Jimmy P. Quilang",
+        title: "Networking break",
+        // chair: "Dr. Eduardo Jimmy P. Quilang",
       },
       {
         time: "10:15 AM",
-        title: "National Innovation Agenda and Strategy Document 2023–2032",
-        speaker: "Ms. Dianne Gail L. Maharjan",
-        position: "Director, NEDA Innovation Staff",
-      },
-      {
-        time: "11:00 AM",
-        title: "Innovations in Rice Breeding and Biotechnology",
-        speaker: "Dr. Marco P. Dizon",
-        position: "Head, Rice Breeding Division, PhilRice",
+        title: "PANEL DISCUSSION 1. PhilRice@40: Milestones, Insights, and Future Commitments",
+        chair: "Ms. Rhemilyn Z. Relado-Sevilla",
+        panel: [
+          "Dr. Santiago R. Obien, DA-PhilRice",
+          "Dr. Leocadio S. Sebastian, DAP",
+          "Dr. Sailila E. Abdula, DA-PhilRice",
+          "Dr. John C. de Leon, DA-PhilRice",
+        ],
       },
       {
         time: "12:00 NN",
-        title: "Lunch Break and Poster Viewing",
+        title: "LUNCH BREAK",
       },
       {
-        time: "01:30 PM",
-        title: "PARALLEL SESSION 1 — Sustainable Rice Farming Systems",
-        chair: "Dr. Maria Elisa R. Gonzales",
-        details: [
-          "Integrated Nutrient Management Approaches",
-          "Precision Rice Farming using Smart Sensors",
-          "Organic Rice Enterprise Development",
+        time: "01:00 PM",
+        title: "PANEL DISCUSSION 2. Partners in Progress: The External View of PhilRice’s Journey",
+        chair: "Mr. Joy Bartolome A. Duldulao",
+        panel: [
+          "Mr. Ralph Alan C. Ceniza, DA-NRP",
+          "Dr. Jose E. Hernandez, UPLB",
+          "Dr. Mercedita A. Sombilla, SEARCA",
+          "Mr. Joel V. Dator, PHilMech",
+          "Ms. Jovie Ann Quirante, East-West Seed Company Inc.",
+          "Dr. Madonna C. Casimero, IRRI",
         ],
       },
       {
         time: "03:00 PM",
-        title: "Networking and Coffee Break",
+        title: "Networking break",
       },
       {
-        time: "03:30 PM",
-        title: "Panel Discussion: Women in Rice R&D",
-        speaker: "Panel of Female Scientists and Extension Leaders",
+        time: "03:15 PM",
+        title: "Concurrent Session 1A: Climate-Smart and Resilient Rice Farming",
+        speaker: "DA-CBC Plenary Hall",
       },
       {
-        time: "05:00 PM",
-        title: "Wrap-up of Day 1",
-        details: ["Summary of Key Insights", "Reminders for Day 2"],
-      },
-      {
-        time: "06:30 PM",
-        title: "Welcome Dinner and Cultural Presentation",
+        time: "06:00 PM",
+        title: "Rice R4DE Appreciation Night",
+        speaker: "DA-CBC Multi-Purpose Hall",
       },
     ],
   },
@@ -100,63 +94,108 @@ export const programData: ProgramDay[] = [
   programs: [
     {
       time: "07:00 AM",
-      title: "Day 2 Registration and Morning Coffee",
+      title: "Morning Coffee and Networking ",
+    },
+    {
+      time: "08:00 AM",
+      title: "Recap of Day 1 / Preliminaries",
     },
     {
       time: "08:30 AM",
-      title: "PLENARY SESSION 2 — Climate-smart Rice Farming Technologies",
-      chair: "Dr. Ricardo A. Orge",
+      title: "PLENARY SESSION 1. Co-Innovating for Impact",
+      chair: "Dr. Jaime A. Manalo IV",
     },
     {
-      time: "08:45 AM",
-      title: "Smart Irrigation Management for Rice Fields",
-      speaker: "Engr. Lea P. Santos",
-      position: "Senior Research Engineer, PhilRice",
+      // time: "09:30 AM",
+      title: "Quacking Up Innovation: Youth-Led Agripreneurship and Integrated Farming",
+      speaker: "Ms. Geneva S. Gañalon",
+      position: "G’s Duckery and Integrated Farm Outstanding Young Farmer Awardee 50th National Gawad Saka Awards",
     },
     {
-      time: "09:30 AM",
-      title: "Poster Session and Networking Break",
+      // time: "09:30 AM",
+      title: "Pangsapaw sa Bahaw: Innovating Against Rice Waste with Banahaw Creations",
+      speaker: "Ms. Queen Anne Xyza Salayo",
+      position: "Banahaw Creations Young Farmers Challenge (YFC) Program Start-up Awardee",
+    },
+    {
+      // time: "09:30 AM",
+      title: "Connected by Purpose: How GOEden Philippines Bridges Technology, Teamwork, and Farmers’ Dreams",
+      speaker: "Ms. Julieane Camile Lacsina",
+      position: "GoEden Philippines",
     },
     {
       time: "10:00 AM",
-      title: "Panel Discussion: Scaling Innovations Across Regions",
-      speaker: "Panel of Experts",
+      title: "Networking break",
     },
     {
-      time: "11:30 AM",
-      title: "Rice Mechanization and Postharvest Technologies",
-      speaker: "Dr. Allan G. Cruz",
-      position: "Chief Engineer, DA-AMTEC",
+      time: "10:15 AM",
+      title: "Concurrent Session 2A: Rice-Based Enterprises and Value-Chain Innovations",
+      speaker: "DA-CBC Plenary Hall",
     },
     {
-      time: "12:30 PM",
-      title: "Lunch Break and Exhibit Viewing",
+      // time: "11:30 AM",
+      title: "Concurrent Session 2B: Participatory Extension and Inclusive Innovations",
+      speaker: "Social Hall",
     },
     {
-      time: "02:00 PM",
-      title: "PARALLEL SESSION 2 — Rice Value Chain and Agribusiness",
-      chair: "Dr. Joy B. Mendoza",
-      details: [
-        "Agri-Entrepreneurship for Rice Farmers",
-        "Digital Platforms for Farm Productivity",
-        "Market Linkages and Rice Price Dynamics",
+      time: "12:00 NN",
+      title: "LUNCH BREAK",
+    },
+    {
+      time: "01:00 PM",
+      title: "PLENARY SESSION 2. Visioning the Future of Rice R4DE",
+      chair: "Dr. Roel R. Suralta",
+    },
+    {
+      // time: "03:30 PM",
+      title: "Reforming the Agri-Fishery Extension System in PH",
+      speaker: "Dr. Rex L. Navarro",
+      position: "DA-PhilRice Technical Consultant",
+    },
+    {
+      // time: "03:30 PM",
+      title: "Inside the World of Seed Distribution: Harnessing R&D Solutions to Elevate RCEF Seed Operations",
+      speaker: "Dr. Flordeliza H. Bordey",
+      position: "RCEF-PMO Director and Deputy Executive Director for Special Concerns, DA-PhilRice",
+    },
+    {
+      // time: "03:30 PM",
+      title: "Open Forum / Q&A",
+    },
+    {
+      time: "03:00 PM",
+      title: "Networking break",
+    },
+    {
+      time: "03:15 PM",
+      title: "PANEL DISCUSSION 3. Juan Meets the Career Scientists",
+      chair: "Dr. John C. de Leon",
+      panel: [
+        "Dr. Roel R. Suralta, DA-PhilRice",
+        "Dr. Norvie L. Manigbas, DA-PhilRice",
+        "Mr. Dindo King M. Donayre, DA-PhilRice",
+        "Dr. Jaime A. Manalo IV, DA-PhilRice",
+        "Mr. Edwin C. Martin, DA-PhilRice",
+        "Dr. Riza G. Abilgos-Ramos, DA-PhilRice",
+        "Dr. Elmer G. Bautista, DA-PhilRice",
+        "Dr. Jesusa C. Beltran, DA-PhilRice",
+        "Dr. Jayvee A. Cruz-Kitma, DA-PhilRice",
+        "Ms. Rosaly V. Manaois, DA-PhilRice",
+        "Dr. Jonathan M. Niones, DA-PhilRice",
+        "Dr. Reynante L. Ordonio, DA-PhilRice",
       ],
     },
     {
-      time: "03:30 PM",
-      title: "Coffee and Networking Break",
-    },
-    {
-      time: "04:00 PM",
-      title: "Young Researchers Forum: Innovations by the Next Generation",
-    },
-    {
-      time: "05:30 PM",
-      title: "Day 2 Synthesis and Announcements",
-    },
-    {
-      time: "06:30 PM",
-      title: "Networking Dinner and Poster Night",
+      time: "05:00 PM",
+      title: "CLOSING PROGRAM",
+      speaker: "Ms. Jacqueline Canilao and Mr. Dindo King M. Donayre",
+      position: "Masters of Ceremonies",
+      details: [
+          "Synthesis",
+          "Recognition and Awarding of Best Posters",
+          "Closing Message and Vote of Thanks",
+          "DA-PhilRice Jingle",
+      ],
     },
   ],
 },
@@ -169,61 +208,18 @@ export const programData: ProgramDay[] = [
   label: "Nov 2025",
   programs: [
     {
-      time: "07:00 AM",
-      title: "Registration and Breakfast",
-    },
-    {
-      time: "08:30 AM",
-      title: "PLENARY SESSION 3 — Future of Rice Research and Development",
-      chair: "Dr. Karen P. Aquino",
-    },
-    {
-      time: "08:45 AM",
-      title: "Integrating AI and Remote Sensing for Rice Monitoring",
-      speaker: "Engr. Paolo C. Reyes",
-      position: "AI Specialist, DOST-ASTI",
-    },
-    {
-      time: "09:30 AM",
-      title: "Poster Viewing and Coffee Break",
-    },
-    {
-      time: "10:00 AM",
-      title: "Presentation of Best Posters and Awards",
-    },
-    {
-      time: "11:00 AM",
-      title: "Closing Ceremony",
+      time: "07:00 AM - 12:00 NN",
+      title: "Field / Facility Tour",
       details: [
-        "Synthesis of the Conference",
-        "Recognition of Partners and Awardees",
-        "Closing Remarks by the PhilRice Executive Director",
+          "FutureRice Farm",
+          "RICEsParK",
+          "PhilRice Facilities",
       ],
     },
     {
-      time: "12:00 NN",
-      title: "Lunch Break",
-    },
-    {
-      time: "01:30 PM",
-      title: "PhilRice Field Tour and Demonstrations",
-      details: [
-        "Rice Machinery Demonstration Area",
-        "Seed Production and Breeding Facilities Tour",
-        "Knowledge Products Booth",
-      ],
-    },
-    {
-      time: "03:30 PM",
-      title: "Coffee Break and Networking",
-    },
-    {
-      time: "04:00 PM",
-      title: "Farewell Program and Group Photo Session",
-    },
-    {
-      time: "05:30 PM",
-      title: "Departure of Participants",
+      // time: "08:30 AM",
+      title: "Kapihan with DA-PhilRice",
+      speaker: "DA-CBC Multi-Purpose Hall",
     },
   ],
 },
