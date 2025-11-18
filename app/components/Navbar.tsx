@@ -48,7 +48,7 @@ const Navbar = () => {
     <>
       <div className="flex flex-col justify-center items-center">
         <nav
-          className={`fixed top-0 w-full h-[70px] sm:h-[80px] md:h-[88px] z-50 transition-all duration-500 transform 
+          className={`fixed top-0 w-full h-auto sm:h-[80px] md:h-[88px] z-50 transition-all duration-500 transform py-2 lg:py-0
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
         ${isScrolled ? "bg-[#006872] shadow-md" : "bg-transparent"}
       `}
@@ -110,8 +110,8 @@ const Navbar = () => {
                 uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition
                 ${
                   isScrolled
-                    ? "bg-[#FFB703] text-white border-[#FFB703]"
-                    : "text-[#006872] border-[#006872] hover:bg-[#FFB703] hover:text-white hover:border-[#FFB703]"
+                    ? "bg-[#F58A1F] text-white border-[#F58A1F]"
+                    : "text-[#006872] border-[#006872] hover:bg-[#F58A1F] hover:text-white hover:border-[#F58A1F]"
                 }
               `}
               >
@@ -125,17 +125,17 @@ const Navbar = () => {
               className="lg:hidden flex flex-col items-center justify-center w-8 h-8 gap-1"
             >
               <span
-                className={`block w-8 h-0.5 bg-[#FFB703] transition-all ${
+                className={`block w-8 h-0.5 bg-[#F58A1F] transition-all ${
                   isMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
-                className={`block w-8 h-0.5 bg-[#FFB703] transition-all ${
+                className={`block w-8 h-0.5 bg-[#F58A1F] transition-all ${
                   isMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-8 h-0.5 bg-[#FFB703] transition-all ${
+                className={`block w-8 h-0.5 bg-[#F58A1F] transition-all ${
                   isMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
@@ -158,7 +158,7 @@ const Navbar = () => {
               <a
                 href="https://ugnaypalay.philrice.gov.ph:441/csd/37th/registration-form/ABCDefgHI"
                 target="_blank"
-                className="uppercase font-bold border border-[#FFB703] rounded-full px-6 py-3 hover:bg-[#FFB703] hover:text-white"
+                className="uppercase font-bold bg-[#F58A1F] rounded-full px-6 py-3 hover:bg-[#F58A1F] hover:text-white"
               >
                 Register Now
               </a>
