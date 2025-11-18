@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import {
   keynoteSpeakers,
@@ -96,22 +98,22 @@ export default function SpeakerSection() {
       id="speaker"
       className="w-full flex justify-center items-center bg-white py-16"
     >
-      <div className="max-w-[1920px] w-full">
+      <div className="max-w-[1920px] w-full px-4">
         {/* Header */}
-        <div className="text-start mb-10 px-6 md:px-32 lg:px-40">
-          <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px]">
+        <div className="w-full flex flex-col items-center lg:items-start mb-10 px-0 sm:px-6 md:px-32 lg:px-40">
+          <h2 className="text-[46px] sm:text-[55px] text-[#006872] text-center lg:text-start leading-tight md:leading-[60px]">
             Our Event{" "}
             <span className="text-[#F58A1F]">Speakers and Panelists</span>
           </h2>
-          <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px]" />
+          <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] mt-[26px]"></div>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap items-center gap-3 mb-8 px-6 md:px-32 lg:px-40">
+        <div className="flex flex-wrap items-center gap-3 mb-8 px-0 sm:px-6 md:px-32 lg:px-40">
           {/* Guest of Honor */}
           <button
             type="button"
-            className={`px-5 py-2 rounded-full text-sm font-semibold uppercase cursor-pointer ${
+            className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold uppercase cursor-pointer ${
               activeFilter === "guestOfHonor"
                 ? "bg-[#005C46] text-white"
                 : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -124,7 +126,7 @@ export default function SpeakerSection() {
           {/* Keynote */}
           <button
             type="button"
-            className={`px-5 py-2 rounded-full text-sm font-semibold uppercase cursor-pointer ${
+            className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold uppercase cursor-pointer ${
               activeFilter === "keynote"
                 ? "bg-[#005C46] text-white"
                 : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -139,7 +141,7 @@ export default function SpeakerSection() {
             <button
               type="button"
               onClick={() => setIsPanelOpen((prev) => !prev)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
                 activeFilter.startsWith("panel")
                   ? "bg-[#005C46] text-white"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -176,7 +178,7 @@ export default function SpeakerSection() {
             <button
               type="button"
               onClick={() => setIsPlenaryOpen((prev) => !prev)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
                 activeFilter.startsWith("plenary")
                   ? "bg-[#005C46] text-white"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -213,7 +215,7 @@ export default function SpeakerSection() {
             <button
               type="button"
               onClick={() => setIsConcurrent1Open((prev) => !prev)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
                 ["concurrent1a", "concurrent1b"].includes(activeFilter)
                   ? "bg-[#005C46] text-white"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -251,7 +253,7 @@ export default function SpeakerSection() {
             <button
               type="button"
               onClick={() => setIsConcurrent2Open((prev) => !prev)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-[10px] sm:text-sm font-semibold flex items-center gap-2 uppercase cursor-pointer ${
                 ["concurrent2a", "concurrent2b"].includes(activeFilter)
                   ? "bg-[#005C46] text-white"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -286,11 +288,16 @@ export default function SpeakerSection() {
         </div>
 
         {/* Swiper */}
-        <div className="relative px-6 md:pl-32">
+        <div className="relative px-6 lg:pl-32">
           <Swiper
             loop
             slidesPerView={5}
             spaceBetween={20}
+            pagination={{
+              clickable: true,
+              verticalClass: "swiper-pagination",
+            }}
+            modules={[Pagination]}
             breakpoints={{
               320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
@@ -302,7 +309,7 @@ export default function SpeakerSection() {
               <SwiperSlide key={speaker.id}>
                 <div
                   onClick={() => setSelectedSpeaker(speaker)}
-                  className="cursor-pointer w-[272px] h-[437px] rounded-2xl shadow-lg transition-all duration-300 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 bg-white hover:bg-[#006872] flex flex-col justify-end relative overflow-hidden"
+                  className="cursor-pointer w-[272px] h-[437px] pt-6 rounded-2xl shadow-lg transition-all duration-300 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 bg-white hover:bg-[#006872] flex flex-col justify-end relative overflow-hidden"
                 >
                   <div className="absolute bottom-0 w-full h-[60%] bg-linear-to-t from-[#007831]/80 via-[#007831]/40 to-transparent flex flex-col justify-end p-5 z-50">
                     <h3 className="text-white font-semibold text-lg leading-tight mb-1">
@@ -312,11 +319,11 @@ export default function SpeakerSection() {
                       {speaker.title}
                     </p>
                   </div>
-                  <div className="w-full h-[95%] mt-auto flex items-end justify-center">
+                  <div className="w-full h-[95%] mt-auto flex items-end justify-center overflow-visible">
                     <img
                       src={speaker.image}
                       alt={speaker.name}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                       style={{
                         transform: `scale(${
                           speaker.imageScale || 1
@@ -332,10 +339,13 @@ export default function SpeakerSection() {
 
         {/* Modal */}
         {selectedSpeaker && (
-          <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-[1227px] w-full relative max-h-[90vh] flex overflow-hidden">
+          <div
+            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
+            onClick={() => setSelectedSpeaker(null)}
+          >
+            <div className="bg-white rounded-2xl shadow-2xl max-w-[320px] sm:max-w-[1227px] w-full relative max-h-screen sm:max-h-[90vh] h-full sm:h-auto flex flex-col sm:flex-row overflow-hidden">
               {/* Speaker Image */}
-              <div className="w-[272px] h-[437px] rounded-2xl shadow-lg bg-[#006872] flex flex-col justify-end relative overflow-hidden flex-shrink-0">
+              <div className="sm:w-[272px] h-[437px] rounded-2xl shadow-lg bg-[#006872] flex flex-col justify-end relative overflow-hidden shrink-0">
                 <div className="absolute bottom-0 w-full h-[60%] bg-linear-to-t from-[#007831]/80 via-[#007831]/40 to-transparent flex flex-col justify-end p-5 z-50">
                   <h3 className="text-white font-semibold text-lg leading-tight mb-1">
                     {selectedSpeaker.name}
@@ -348,7 +358,7 @@ export default function SpeakerSection() {
                   <img
                     src={selectedSpeaker.image}
                     alt={selectedSpeaker.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                     style={{
                       transform: `scale(${
                         selectedSpeaker.imageScale || 1
@@ -360,7 +370,7 @@ export default function SpeakerSection() {
 
               {/* Scrollable Description */}
               <div
-                className="relative flex-1 p-8 overflow-y-auto max-h-[437px] 
+                className="relative flex-1 p-4 sm:p-8 overflow-y-auto max-h-[437px] 
                       scrollbar-thin scrollbar-thumb-[#005C46]/50 scrollbar-track-transparent 
                       hover:scrollbar-thumb-[#005C46]/80"
               >
@@ -368,12 +378,12 @@ export default function SpeakerSection() {
                 <button
                   type="button"
                   onClick={() => setSelectedSpeaker(null)}
-                  className="absolute top-3 right-3 text-gray-600 hover:text-black cursor-pointer z-10"
+                  className="hidden sm:block absolute top-3 right-3 text-gray-600 hover:text-black cursor-pointer z-10"
                 >
                   <X size={24} />
                 </button>
 
-                <h1 className="leading-relaxed text-[#1F773A] text-[30px] mb-4">
+                <h1 className="leading-relaxed text-[#1F773A] text-[22px] sm:text-[30px] mb-4">
                   {selectedSpeaker.presentationTitle ||
                     "This speaker will share insights about their field of expertise."}
                 </h1>

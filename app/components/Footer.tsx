@@ -13,7 +13,7 @@ const Footer = () => {
   const usefulLinksCol2 = ["venue", "posters", "faqs"];
 
   return (
-    <footer className="relative w-full bg-[#1A1A1A] shadow flex justify-center pt-[63px] pb-[53px] pl-16 lg:pl-32 pr-16">
+    <footer className="relative w-full bg-[#1A1A1A] shadow flex justify-center pt-[63px] pb-[53px] px-4 lg:px-32">
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 w-full">
         {/* Left Side */}
         <div className="flex flex-col gap-[33px]">
@@ -158,7 +158,7 @@ const Footer = () => {
           {/* Scroll to Top Button */}
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="absolute top-6 right-6 w-[50px] h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center cursor-pointer hover:bg-[rgba(255,255,255,0.4)] transition-all"
+            className="absolute top-3 right-3 sm:top-6 sm:right-6 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center cursor-pointer hover:bg-[rgba(255,255,255,0.4)] transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

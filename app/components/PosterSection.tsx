@@ -27,23 +27,28 @@ export default function PosterSection() {
         id="posters"
         className="bg-white text-white w-full flex flex-col items-center justify-center py-10 px-4"
       >
-        <div className="relative w-full max-w-[1920px] flex flex-col flex-1 overflow-visible mt-8 z-10 md:px-32 lg:px-40 mb-10">
+        <div className="relative w-full max-w-[1920px] flex flex-col items-center sm:items-start flex-1 overflow-visible mt-8 z-10 md:px-32 lg:px-40 mb-10">
           {/* ✅ Top-right buttons */}
-          <div className="absolute top-6 right-6 flex flex-col gap-3 z-20">
+          <div className="absolute top-32 right-2 sm:top-6 sm:right-6 flex flex-col gap-3 z-20">
             {/* Fullscreen Button */}
             <button
               onClick={handleFullscreen}
-              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
+              className="flex items-center justify-center w-6 h-6 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
               title="View Fullscreen"
             >
-              <Maximize2 size={20} />
+              <div className="hidden sm:block">
+                <Maximize2 size={20} />
+              </div>
+              <div className="block sm:hidden">
+                <Maximize2 size={14} />
+              </div>
             </button>
           </div>
 
-          <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
+          <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
             List of <span className="text-[#F58A1F]">Posters</span>
           </h2>
-          <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px] mb-10" />
+          <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
 
           <Swiper
             effect={"coverflow"}

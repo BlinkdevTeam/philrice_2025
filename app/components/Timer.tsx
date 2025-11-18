@@ -40,10 +40,10 @@ const Timer = () => {
 
   return (
     <div className="w-full bg-white flex justify-center items-center py-12">
-      <div className="bg-white w-full max-w-[1920px] flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 px-4 sm:px-8 md:px-32">
+      <div className="bg-white w-full max-w-[1920px] flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 px-4 sm:px-8">
         {/* Days */}
         <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
-          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#FFC200] font-bold">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.days}
           </span>
           <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
@@ -53,7 +53,7 @@ const Timer = () => {
 
         {/* Hours */}
         <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
-          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#FFC200] font-bold">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.hours}
           </span>
           <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
@@ -70,7 +70,7 @@ const Timer = () => {
 
         {/* Minutes */}
         <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
-          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#FFC200] font-bold">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.minutes}
           </span>
           <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">
@@ -80,7 +80,7 @@ const Timer = () => {
 
         {/* Seconds */}
         <div className="flex flex-col justify-center items-center bg-[#006872] text-center rounded-[26px] w-full sm:w-[200px] md:w-[251px] h-[180px] sm:h-[200px] md:h-[215px]">
-          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#FFC200] font-bold">
+          <span className="text-[60px] sm:text-[70px] md:text-[80px] text-[#F58A1F] font-bold">
             {timeLeft.seconds}
           </span>
           <span className="text-[18px] sm:text-[20px] md:text-[23.5px] text-white uppercase">

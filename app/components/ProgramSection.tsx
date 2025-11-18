@@ -34,23 +34,23 @@ export default function ProgramSection() {
       >
         <div className="w-full max-w-[1153px] flex flex-col flex-1 overflow-hidden mt-8 z-10">
           {/* Header + Tabs */}
-          <div className="w-full flex flex-col md:flex-row justify-between shrink-0">
-            <div>
-              <h2 className="text-[55px] leading-[60px] font-bold">
+          <div className="w-full flex flex-wrap gap-2 justify-center xl:justify-between shrink-0">
+            <div className="flex flex-col items-center lg:items-start">
+              <h2 className="text-[46px] sm:text-[55px] text-center lg:text-start leading-[60px] font-bold">
                 Conference
                 <br />
                 <span className="text-[#F58A1F]">Program</span>
               </h2>
-              <div className="w-[373px] h-[3px] bg-[#F58A1F] my-6" />
+              <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] my-6"></div>
             </div>
 
             {/* Date Tabs */}
-            <div className="flex gap-4 overflow-x-auto pb-2">
+            <div className="w-full sm:w-auto flex justify-start sm:justify-center gap-2 sm:gap-4 overflow-x-auto pb-2">
               {programData.map((day, index) => (
                 <button
                   key={day.date}
                   onClick={() => setActiveDay(index)}
-                  className={`w-[230px] h-[142px] grid grid-rows-3 rounded-[26px] overflow-hidden transition-all shrink-0 cursor-pointer ${
+                  className={`w-auto min-h-[120px] md:w-[230px] md:h-[142px] grid grid-rows-3 rounded-[12px] sm:rounded-[26px] overflow-hidden transition-all shrink-0 cursor-pointer ${
                     activeDay === index
                       ? "text-white"
                       : "opacity-40 hover:opacity-70"
@@ -58,7 +58,7 @@ export default function ProgramSection() {
                   type="button"
                 >
                   <div
-                    className={`text-[20px] flex justify-center items-center ${
+                    className={`h-full text-base md:text-[20px] text-center flex justify-center items-center ${
                       activeDay === index
                         ? "bg-[#007831] text-[#FFB703]"
                         : "bg-[#004049] text-[#006872]"
@@ -69,14 +69,16 @@ export default function ProgramSection() {
                     </p>
                   </div>
                   <div
-                    className={`flex justify-center items-center gap-4 row-span-2 ${
+                    className={`flex justify-center items-center gap-4 row-span-2 px-4 ${
                       activeDay === index
                         ? "bg-[#F58A1F] text-[#FFFFFF]"
                         : "bg-[#004F5A] text-[#006872]"
                     }`}
                   >
-                    <h1 className="text-[80px] -mt-5">{day.date}</h1>
-                    <p className="text-[23.5px] font-bold">
+                    <h1 className="text-[50px] md:text-[80px] -mt-2.5 md:-mt-5">
+                      {day.date}
+                    </h1>
+                    <p className="text-[18px] md:text-[23.5px] font-bold">
                       {day.label.split(" ")[0]} <br />
                       {day.label.split(" ")[1]}
                     </p>
@@ -91,38 +93,43 @@ export default function ProgramSection() {
             ref={scrollRef}
             className="flex-1 overflow-y-auto mt-6 pr-2 custom-scrollbar relative z-0"
           >
-            <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-col gap-4 sm:gap-3 w-full">
               {activeProgram.programs.map((item) => (
                 <div
                   key={`${item.time}-${item.title}`}
-                  className="flex flex-col md:flex-row items-stretch overflow-hidden bg-transparent gap-6 group"
+                  className="flex flex-col md:flex-row items-stretch overflow-hidden bg-transparent gap-2 sm:gap-6 group"
                 >
                   {/* Time Column */}
-                  <div className="flex justify-center items-center font-bold px-12 py-3 rounded-xl h-[91px] bg-white group-hover:bg-[#F58A1F] transition-colors duration-300">
-                    <p className="text-[30px] text-center text-[#1F773A] group-hover:text-white transition-colors duration-300">
-                      {item.time}
-                    </p>
-                  </div>
+                  {item.time && (
+                    <div className="flex justify-center items-center font-bold px-12 py-3 rounded-xl h-auto md:h-[91px] bg-white group-hover:bg-[#F58A1F] transition-colors duration-300">
+                      <p className="text-[20px] sm:text-[30px] text-center text-[#1F773A] group-hover:text-white transition-colors duration-300">
+                        {item.time}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Details Column */}
                   <div className="flex flex-col justify-center items-start px-4 py-4 flex-1 rounded-xl h-auto bg-white group-hover:bg-[#F58A1F] transition-colors duration-300">
-                    <h4 className="font-bold text-lg text-[#1F773A] text-[30px] group-hover:text-white transition-colors duration-300">
+                    <h4 className="font-bold text-lg text-[#1F773A] text-[22px] sm:text-[30px] group-hover:text-white transition-colors duration-300 capitalize">
                       {item.title}
                     </h4>
 
-                    {item.details && (
-                      <ul className="text-sm text-[#000000] group-hover:text-white transition-colors duration-300 list-disc ml-6 space-y-1">
-                        {item.details.map((detail) => (
-                          <li key={detail}>{detail}</li>
-                        ))}
-                      </ul>
-                    )}
-
                     {item.chair && (
                       <p className="text-sm mt-1 text-[#000000] group-hover:text-white transition-colors duration-300">
-                        Chair:{" "}
+                        Moderator:{" "}
                         <span className="italic font-semibold">
                           {item.chair}
+                        </span>
+                      </p>
+                    )}
+
+                    {item.panel && (
+                      <p className="text-sm mt-1 text-[#000000] group-hover:text-white transition-colors duration-300 flex gap-8">
+                        Panelists:{" "}
+                        <span className="italic font-semibold">
+                          {item.panel.map((panel) => (
+                            <li key={panel}>{panel}</li>
+                          ))}
                         </span>
                       </p>
                     )}
@@ -131,8 +138,15 @@ export default function ProgramSection() {
                       <p className="text-sm mt-1 text-[#000000] group-hover:text-white transition-colors duration-300">
                         <span className="font-semibold">{item.speaker}</span>
                         <br />
-                        {item.position}
+                        <span>{item.position}</span>
                       </p>
+                    )}
+                    {item.details && (
+                      <ul className="text-[12px] sm:text-sm text-[#000000] group-hover:text-white transition-colors duration-300 list-disc ml-6 space-y-1">
+                        {item.details.map((detail) => (
+                          <li key={detail}>{detail}</li>
+                        ))}
+                      </ul>
                     )}
                   </div>
                 </div>

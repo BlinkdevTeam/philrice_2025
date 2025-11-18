@@ -108,3 +108,7 @@ h6 {
   /* slightly bigger for emphasis */
   z-index: 10;
 }
+
+.swiper-pagination {
+  bottom: -2px !important;
+}

@@ -21,11 +21,11 @@ export default function FAQSection() {
       id="faqs"
       className="w-full flex flex-col items-center bg-white pb-16 pt-8 px-4 sm:px-6 lg:px-12"
     >
-      <div className="max-w-[1920px] w-full px-6 md:px-32 lg:px-40 mb-10">
-        <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
-          Frequently <span className="text-[#F58A1F]">asked questions</span>
+      <div className="max-w-[1920px] w-full px-0 md:px-32 lg:px-40 mb-10">
+        <h2 className="text-[46px] sm:text-[55px] text-[#006872] text-center lg:text-start leading-tight md:leading-[60px]">
+          Frequently <span className="text-[#F58A1F]">Asked Questions</span>
         </h2>
-        <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px]" />
+        <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] my-6"></div>
       </div>
 
       {/* Accordion */}
