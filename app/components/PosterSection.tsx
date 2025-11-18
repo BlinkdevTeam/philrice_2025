@@ -33,15 +33,15 @@ export default function PosterSection() {
             {/* Fullscreen Button */}
             <button
               onClick={handleFullscreen}
-              className="flex items-center justify-center w-6 h-6 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
+              className="hidden sm:flex items-center justify-center w-6 h-6 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
               title="View Fullscreen"
             >
               <div className="hidden sm:block">
                 <Maximize2 size={20} />
               </div>
-              <div className="block sm:hidden">
+              {/* <div className="block sm:hidden">
                 <Maximize2 size={14} />
-              </div>
+              </div> */}
             </button>
           </div>
 

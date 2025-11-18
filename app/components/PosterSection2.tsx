@@ -19,7 +19,7 @@ export default function PosterSection2() {
 
   // Minimize button to go back to homepage
   const handleMinimize = () => {
-    router.push("/#posters");
+    router.push("/");
     if (window.location.pathname === "/") {
       const section = document.getElementById("posters");
       if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -47,17 +47,22 @@ export default function PosterSection2() {
           <div className="absolute top-6 right-6 flex flex-col gap-3 z-20">
             <button
               onClick={handleMinimize}
-              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
+              className="hidden sm:flex items-center justify-center w-6 h-6 sm:w-12 sm:h-12 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
               title="Go to Homepage Posters"
             >
-              <Minimize2 size={20} />
+              <div className="hidden sm:block">
+                <Minimize2 size={20} />
+              </div>
+              <div className="block sm:hidden">
+                <Minimize2 size={14} />
+              </div>
             </button>
           </div>
 
           <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
             List of <span className="text-[#F58A1F]">Posters</span>
           </h2>
-          <div className="w-[200px] md:w-[373px] h-[3px] bg-[#FFC200] mt-4 md:mt-[26px] mb-10" />
+          <div className="w-[200px] md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
 
           <Swiper
             effect={"coverflow"}
@@ -115,7 +120,7 @@ export default function PosterSection2() {
             />
             <button
               onClick={handleCloseModal}
-              className="absolute top-2 -right-12 w-10 h-10 flex items-center justify-center bg-white/20 hover:bg-white/40 text-white rounded-full cursor-pointer"
+              className="hidden absolute top-2 -right-12 w-10 h-10 sm:flex items-center justify-center bg-white/20 hover:bg-white/40 text-white rounded-full cursor-pointer"
             >
               <X size={20} />
             </button>

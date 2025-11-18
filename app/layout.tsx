@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://philrice-2025.vercel.app/SEO_Cover.jpg",
-        width: 1200,
-        height: 630,
+        width: 1348,
+        height: 526,
         alt: "PhilRice 40 Years of Rice Innovations & 37th Ugnay Palay Conference",
       },
     ],
