@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -15,6 +15,43 @@ export default function PosterSection() {
     "https://sfvideo.blob.core.windows.net/sitefinity/images/default-source/default-album/decoded-temp-image-storage/23-idt-scientific-poster-template-with-labels.jpg?sfvrsn=c6a9f207_6";
 
   const router = useRouter(); // <-- initialize router
+
+  useEffect(() => {
+    // ❗ Run only in browser
+    if (typeof window === "undefined") return;
+
+    console.log("window.screen.width", window.screen.width)
+    // TV detection
+    const isTVScreen = () => {
+      return window.screen.width >= 1920 && window.screen.height >= 1080;
+    };
+
+    if (!isTVScreen()) return; // stop here if not TV
+
+    let timer: any;
+    const idleTime = 20000; // 1 minute inactivity
+
+    const resetTimer = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => handleFullscreen(), idleTime);
+    };
+
+    // Activity listeners
+    window.addEventListener("mousemove", resetTimer);
+    window.addEventListener("keydown", resetTimer);
+    window.addEventListener("touchstart", resetTimer);
+    window.addEventListener("click", resetTimer);
+
+    resetTimer();
+
+    return () => {
+      window.removeEventListener("mousemove", resetTimer);
+      window.removeEventListener("keydown", resetTimer);
+      window.removeEventListener("touchstart", resetTimer);
+      window.removeEventListener("click", resetTimer);
+      clearTimeout(timer);
+    };
+  }, []);
 
   // Navigate to Posters page
   const handleFullscreen = () => {
