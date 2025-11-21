@@ -19,7 +19,7 @@ export default function HeroSection() {
         </div>
 
         <p className="text-[23.5px] font-bold leading-[137%] mt-3">
-          25 - 27 November 2025 | CBC Plenary Hall | DA-PhilRice CES <br />
+          25 - 27 November 2025 | DA-CBC Plenary Hall | DA-PhilRice CES <br />
           Maligaya, Science City of Muñoz, Nueva Ecija
         </p>
 
