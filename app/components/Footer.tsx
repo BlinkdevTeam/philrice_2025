@@ -150,7 +150,7 @@ const Footer = () => {
           {/* Text */}
           <div className="flex lg:hidden w-full justify-center items-center mt-8">
             <p className="text-[#D9D9D9] text-[16px] text-center leading-[130%]">
-              PHILRICE © 2024. All rights reserved.
+              PHILRICE © 2025. All rights reserved.
               <br />
               Powered by BLINK CREATIVE STUDIO
             </p>
