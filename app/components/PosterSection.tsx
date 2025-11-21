@@ -16,42 +16,7 @@ export default function PosterSection() {
 
   const router = useRouter(); // <-- initialize router
 
-  useEffect(() => {
-    // ❗ Run only in browser
-    if (typeof window === "undefined") return;
 
-    console.log("window.screen.width", window.screen.width)
-    // TV detection
-    const isTVScreen = () => {
-      return window.screen.width >= 1920 && window.screen.height >= 1080;
-    };
-
-    if (!isTVScreen()) return; // stop here if not TV
-
-    let timer: any;
-    const idleTime = 20000; // 1 minute inactivity
-
-    const resetTimer = () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => handleFullscreen(), idleTime);
-    };
-
-    // Activity listeners
-    window.addEventListener("mousemove", resetTimer);
-    window.addEventListener("keydown", resetTimer);
-    window.addEventListener("touchstart", resetTimer);
-    window.addEventListener("click", resetTimer);
-
-    resetTimer();
-
-    return () => {
-      window.removeEventListener("mousemove", resetTimer);
-      window.removeEventListener("keydown", resetTimer);
-      window.removeEventListener("touchstart", resetTimer);
-      window.removeEventListener("click", resetTimer);
-      clearTimeout(timer);
-    };
-  }, []);
 
   // Navigate to Posters page
   const handleFullscreen = () => {

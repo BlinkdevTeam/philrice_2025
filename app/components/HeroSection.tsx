@@ -58,7 +58,7 @@ export default function HeroSection() {
 
         <div className="relative flex justify-center items-center lg:justify-start lg:items-start gap-4 -mt-10 lg:-mt-2">
           <img
-            src="/assets/40_years_1.png"
+            src="/assets/40 years 2.png"
             alt="orange 40 years"
             className="max-w-[170px] sm:max-w-[230px] lg:max-w-[478px] w-full"
           />

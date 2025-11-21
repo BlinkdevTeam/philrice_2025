@@ -3,7 +3,7 @@ export const questions = [
   {
     question: "When and where is the conference taking place?",
     answer:
-      "The 36th Ugnay Palay National Rice R4D Conference will be held on 25-27 November 2025. In-person participants will be gathered at the DA-Crop Biotechnology Center Plenary Hall, DA-PhilRice in Nueva Ecija.",
+      "The 37th Ugnay Palay National Rice R4D Conference will be held on 25-27 November 2025. In-person participants will be gathered at the DA-Crop Biotechnology Center Plenary Hall, DA-PhilRice in Nueva Ecija.",
   },
   {
     question: "Who should attend the conference?",
@@ -18,7 +18,7 @@ export const questions = [
   {
     question: "Who can register for the conference?",
     answer:
-      "Anyone can register to the 36th Ugnay Palay. We are inviting the rice science community and its stakeholders to attend the Conference. Registration is open until mid-November 2024.",
+      "Anyone can register to the 37th Ugnay Palay. We are inviting the rice science community and its stakeholders to attend the Conference. Registration is open until mid-November 2024.",
   },
   {
     question: "How do I register for the conference?",
@@ -34,7 +34,7 @@ export const questions = [
   {
     question: "How much does it cost to register for the conference?",
     answer:
-      "Attendance to the 36th Ugnay Palay is free of charge. All participants must register and will please arrange and pay for their own accommodation. Nearby accommodation options can be found here",
+      "Attendance to the 37th Ugnay Palay is free of charge. All participants must register and will please arrange and pay for their own accommodation. Nearby accommodation options can be found here",
     link:"https://drive.google.com/file/d/1E_PrvbQpzwDj3ti7RNxiaD6Cg8GcN7wa/view?usp=sharing  ",
   },
   {
