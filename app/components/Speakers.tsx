@@ -133,7 +133,7 @@ export default function SpeakerSection() {
             }`}
             onClick={() => handleFilterChange("keynote")}
           >
-            Keynote Speaker
+            Keynote Speakers
           </button>
 
           {/* Panel Discussions Dropdown */}
@@ -148,8 +148,8 @@ export default function SpeakerSection() {
               }`}
             >
               {activeFilter.startsWith("panel")
-                ? `Panel Discussion ${activeFilter.slice(-1)}`
-                : "Panel Discussion"}
+                ? `Panel Discussions ${activeFilter.slice(-1)}`
+                : "Panel Discussions"}
               <ChevronDown size={16} />
             </button>
             {isPanelOpen && (
@@ -185,8 +185,8 @@ export default function SpeakerSection() {
               }`}
             >
               {activeFilter.startsWith("plenary")
-                ? `Plenary Session ${activeFilter.slice(-1)}`
-                : "Plenary Session"}
+                ? `Plenary Sessions ${activeFilter.slice(-1)}`
+                : "Plenary Sessions"}
               <ChevronDown size={16} />
             </button>
             {isPlenaryOpen && (
@@ -385,11 +385,11 @@ export default function SpeakerSection() {
 
                 <h1 className="leading-relaxed text-[#1F773A] text-[22px] sm:text-[30px] mb-4">
                   {selectedSpeaker.presentationTitle ||
-                    "This speaker will share insights about their field of expertise."}
+                    "PhilRice@40: Milestones, Insights, and Future Commitments."}
                 </h1>
                 <p className="text-black leading-relaxed whitespace-pre-line">
                   {selectedSpeaker.description ||
-                    "This speaker will provide valuable insights during the event."}
+                    "PhilRice@40: Milestones, Insights, and Future Commitments."}
                 </p>
               </div>
             </div>

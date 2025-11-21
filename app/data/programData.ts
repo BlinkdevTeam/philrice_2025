@@ -30,7 +30,7 @@ export const programData: ProgramDay[] = [
           "Invocation and National Anthem",
           "Be RICEponsible Pledge",
           "Welcome Remarks and Introduction of the Guest of Honor and Keynote Speakers",
-          "Messages of the Guests of Honor and Keynote Speakers",
+          "Messages of the Guest of Honor and Keynote Speakers",
           "Presentation of New Knowledge Products",
           "Launching of the RiceBIS Magsasaka Network",
           "Opening and viewing of e-posters ",

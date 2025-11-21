@@ -50,7 +50,7 @@ export default function HeroSection() {
           <div className="relative w-full xl:w-auto h-auto bg-[#006872] px-6 py-2 mt-0 lg:mt-3 ml-0 lg:-ml-6">
             <p className="text-[12px] sm:text-[16px] lg:text-[18px] xl:text-[20.5px] text-center lg:text-start font-bold leading-[140%] text-[#ffffff] tracking-normal xl:tracking-[1.1px]">
               25 - 27 November 2025 <span className="text-[#F58A1F]">|</span>{" "}
-              CBC Plenary Hall <span className="text-[#F58A1F]">|</span>{" "}
+              DA-CBC Plenary Hall <span className="text-[#F58A1F]">|</span>{" "}
               DA-PhilRice CES
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function HeroSection() {
           <img
             src="/assets/40_years_1.png"
             alt="orange 40 years"
-            className="max-w-[170px] sm:max-w-[230px] lg:max-w-[288px] w-full"
+            className="max-w-[170px] sm:max-w-[230px] lg:max-w-[478px] w-full"
           />
         </div>
       </div>

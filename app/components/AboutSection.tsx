@@ -15,14 +15,7 @@ export default function AboutSection() {
         <div className="max-w-[373px] w-full h-[3px] bg-[#F58A1F] mt-[26px]"></div>
 
         <p className="text-[16px] sm:text-[20px] text-[#808080] leading-[130%] mt-12 sm:mt-[63px]">
-          The 36th Ugnay Palay National Rice R4D Conference arrives at a crucial
-          moment in the evolution of the Philippine rice industry. This
-          year&apos;s theme, &quot;Advancing Rice R4DE para sa Masaganang Bagong
-          Pilipinas&quot; encapsulates DA-PhilRice&apos;s commitment to driving
-          innovation, resilience, and sustainability in Philippine agriculture.
-          It reflects the Institute’s dedication to placing farmers at the core
-          of these advancements, ensuring their needs are met and their
-          livelihoods are improved as they strive for greater productivity.
+          As DA-PhilRice celebrates its 40th founding anniversary, we find it timely and appropriate to adopt the theme ‘40 Years of Rice Innovations: Sowing Progress, Harvesting Prosperity’ for this year’s conference. The 37th Ugnay Palay National Rice R4D Conference becomes a strategic platform to revisit our shared journey–highlighting the significant scientific breakthroughs, institutional partnerships, and field-level interventions that have contributed to the transformation of rice-farming communities and the broader agri-food system.
         </p>
 
         {/* Image Grid */}
@@ -87,23 +80,10 @@ export default function AboutSection() {
         </div>
 
         <p className="text-[16px] sm:text-[20px] text-[#808080] leading-[130%] mb-16 sm:mb-[84px]">
-          This conference will serve as a pivotal platform for uniting
-          stakeholders from across the rice sector—including researchers,
-          scientists, policymakers, farmers, and industry partners—around a
-          shared mission of transforming the industry. By focusing on harnessing
-          cutting-edge advancements in rice research, technology, and
-          development (R4D), the conference aims to build on the momentum
-          initiated by the RCEF program, exploring ways to further elevate the
-          productivity and market competitiveness of Filipino farmers and
-          reinforce the Philippines&apos; standing as a global rice industry
-          leader.
+          The conference is anchored on the belief that R4DE must be responsive, inclusive, and forward-looking. Amid the challenges posed by climate change, dwindling natural resources, technological disruptions, and shifting policy landscapes, the Ugnay Palay serves as a venue to galvanize the rice R4DE community toward co-creating solutions, fostering strong partnerships, and aligning efforts with national and global sustainable development goals.
           <br />
           <br />
-          Through collaboration and innovation, DA-PhilRice is confident in
-          securing a more resilient, sustainable, and food-secure future for all
-          Filipinos. Together, we are working toward realizing a
-          &quot;Masaganang Bagong Pilipinas,&quot; where every Filipino enjoys a
-          prosperous and secure life.
+          This annual convergence of rice scientists, farmers, youth, policymakers, and private sector collaborators will feature insights on past accomplishments, critical reflections on ongoing initiatives, and forward-looking discussions to guide the next generation of innovations and policy directions. It will serve as a pivotal platform for knowledge sharing, reflection, and strategic collaboration in charting the course for a resilient, inclusive, and technology-driven rice industry.
         </p>
       </div>
 
@@ -150,22 +130,8 @@ export default function AboutSection() {
             <div className="order-1 lg:order-2">
               <div className="ml-0 lg:ml-20 mt-0 px-4 lg:pr-12">
                 <p className="text-[16px] sm:text-[20px] leading-[26px] text-white text-center lg:text-start">
-                  The DA-PhilRice charter established by Executive Order No.
-                  1061 in November 1985, mandates the Institute to lead the
-                  national rice research for development and extension (R4DE)
-                  program. This initiative has been crucial in enhancing and
-                  sustaining rice production across the Philippines. Over the
-                  years, DA-PhilRice has worked closely with the Department of
-                  Agriculture (DA) and a broad network of collaborators—
-                  including state colleges and universities, local government
-                  units, the private sector, non-governmental organizations, and
-                  farmer groups—to uplift the nation’s rice farming communities.
+                  Promulgated in November 1985, Executive Order No. 1061 mandates DA-PhilRice to lead the National Rice Research for Development and Extension (R4DE) program to improve and sustain rice production in the country. Since then, the Institute has contributed significantly to advancing rice science and technology, improving farm productivity, and enhancing the well-being of Filipino rice farmers. It has been at the forefront of generating, scaling, and sustaining science-based solutions in rice farming that continue to uplift the lives of millions of rice-farming families across the country. 
                   <br />
-                  <br />
-                  During the implementation of its Strategic Plan 2017-2022,
-                  DA-PhilRice successfully navigated numerous challenges and
-                  played a key role in the rollout of the Rice Competitiveness
-                  Enhancement Fund (RCEF)
                 </p>
               </div>
             </div>
@@ -173,24 +139,8 @@ export default function AboutSection() {
 
           <div className="max-w-[1047px] mt-12 px-0 sm:px-4">
             <p className="text-[16px] sm:text-[20px] leading-[26px] text-white text-center lg:text-start">
-              During the implementation of its Strategic Plan 2017-2022,
-              DA-PhilRice successfully navigated numerous challenges and played
-              a key role in the rollout of the Rice Competitiveness Enhancement
-              Fund (RCEF). This initiative provided Filipino rice farmers with
-              access to high-quality seeds, advanced farming technologies,
-              mechanization, and comprehensive training programs. These measures
-              were pivotal in modernizing rice farming practices, reducing
-              production costs, and increasing yields, thereby enhancing the
-              competitiveness of Filipino farmers in the global market.
+              This year marks four decades of DA-PhilRice’s leadership in rice R4DE and its transformative impacts on the country’s food security, rural development, and scientific advancement. The Institute was able to deliver these impacts over the years because of its strong and close partnerships with the Department of Agriculture (DA) and a dynamic network of collaborators—including state colleges and universities, local government units, the private sector, non-government organizations, and farmer groups.
               <br />
-              <br />
-              Building on these successes, DA-PhilRice is now set to implement
-              its 2023-2028 Strategic Plan, which focuses on leveraging advanced
-              science and technology to create more prosperous and resilient
-              rice farming communities. Central to this plan is a people-centric
-              approach, aimed at improving the productivity, profitability, and
-              well-being of farmers while ensuring the long-term sustainability
-              and competitiveness of the rice industry.
             </p>
           </div>
         </div>

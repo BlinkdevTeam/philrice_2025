@@ -63,7 +63,7 @@ export default function SpeakersSlider() {
       {/* Filter Buttons */}
       <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
         <button className="bg-[#005C46] text-white font-semibold px-5 py-2 rounded-full text-sm">
-          KEYNOTE SPEAKER
+          KEYNOTE SPEAKERS
         </button>
         <button className="bg-gray-100 text-gray-500 font-semibold px-5 py-2 rounded-full text-sm">
           PLENARY SESSION 1
