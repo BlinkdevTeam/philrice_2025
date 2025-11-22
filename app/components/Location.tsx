@@ -84,10 +84,10 @@ export default function LocationSection() {
             </h2>
             <div className="w-[200px] sm:w-[373px] h-[3px] bg-[#F58A1F] mt-4 sm:mt-[26px] mb-6 sm:mb-8"></div>
 
-            <p className="text-white text-[12px] sm:text-[14px] lg:text-[18px] leading-relaxed">
+            {/* <p className="text-white text-[12px] sm:text-[14px] lg:text-[18px] leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Nec adipiscing aliquet
               integer adipiscing pulvinar.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
