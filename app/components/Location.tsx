@@ -6,13 +6,11 @@ export default function LocationSection() {
   const imageUrl =
     "https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/philrice/map1.png";
 
-  // Handle fullscreen open
   const handleFullscreen = () => {
     const newWindow = window.open(imageUrl, "_blank");
     if (newWindow) newWindow.focus();
   };
 
-  // ✅ Handle proper image download (fetch → blob)
   const handleDownload = async () => {
     try {
       const response = await fetch(imageUrl, { mode: "cors" });
@@ -26,7 +24,6 @@ export default function LocationSection() {
       link.click();
       link.remove();
 
-      // Clean up blob after download
       window.URL.revokeObjectURL(blobUrl);
     } catch (error) {
       console.error("❌ Download failed:", error);
