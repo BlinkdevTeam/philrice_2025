@@ -72,7 +72,7 @@ export default function LocationSection() {
         </div>
 
         {/* Content Layer (Bottom Left Corner, Responsive) */}
-        <div className="absolute bottom-2 left-2 md:bottom-16 md:left-32 z-10 flex flex-col items-start justify-end">
+        {/* <div className="absolute bottom-2 left-2 md:bottom-16 md:left-32 z-10 flex flex-col items-start justify-end">
           <div className="bg-[#006872]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-10 max-w-[90%] md:max-w-[600px]">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[55px] text-white leading-tight sm:leading-[60px]">
               Conference
@@ -81,13 +81,8 @@ export default function LocationSection() {
             </h2>
             <div className="w-[200px] sm:w-[373px] h-[3px] bg-[#F58A1F] mt-4 sm:mt-[26px] mb-6 sm:mb-8"></div>
             <a className="text-[18px] hover:text-[#f58a1f]" href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES%20(1).pdf">Download Souvenir Program</a>
-
-            {/* <p className="text-white text-[12px] sm:text-[14px] lg:text-[18px] leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Nec adipiscing aliquet
-              integer adipiscing pulvinar.
-            </p> */}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
