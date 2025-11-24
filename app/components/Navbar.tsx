@@ -103,7 +103,7 @@ const Navbar = () => {
               </ul>
               
               <a
-                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES.pdf"
+                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES%20(1).pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
@@ -172,7 +172,7 @@ const Navbar = () => {
               ))}
 
               <a
-                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES.pdf"
+                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES%20(1).pdf"
                 target="_blank"
                 className="uppercase font-bold bg-[#F58A1F] rounded-full px-6 py-3 hover:bg-[#F58A1F] hover:text-white"
               >
