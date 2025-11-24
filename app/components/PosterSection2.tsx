@@ -11,6 +11,7 @@ import { Minimize2, Maximize, X, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import { group1, group2, group3, group4 } from "../data/posters";
+import Image from "next/image";
 
 export default function PosterSection2() {
   const [activeTheme, setActivetheme] = useState(1)
@@ -152,21 +153,17 @@ export default function PosterSection2() {
                 ? group4
                 : group1
             ).map((src, idx) => (
-              <SwiperSlide key={idx} className="flex justify-center relative">
-                <img
+              <SwiperSlide key={idx} className="relative w-full flex justify-center">
+                <Image
                   src={src}
-                  className="poster-img cursor-pointer"
                   alt={`Poster ${idx}`}
+                  width={900}
+                  height={0}           // placeholder, won't be used
+                  style={{ height: 'auto' }}
+                  className="object-contain"
+                  loading="lazy"
                   onClick={() => handleFullscreenImage(src)}
                 />
-                {/* Fullscreen per image */}
-                {/* <button
-                  onClick={() => handleFullscreenImage(posterUrl)}
-                  className="absolute top-2 right-2 flex items-center justify-center w-8 h-8 bg-[#007831]/80 hover:bg-[#006872] text-white rounded-full shadow-md transition cursor-pointer"
-                  title="View Fullscreen"
-                >
-                  <Maximize size={16} />
-                </button> */}
               </SwiperSlide>
             ))}
           </Swiper>
