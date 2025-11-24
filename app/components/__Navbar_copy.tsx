@@ -65,7 +65,7 @@ const Navbar = () => {
               <li key={section}>
                 <button
                   onClick={() => scrollToSection(section)}
-                  className="capitalize text-white font-bold hover:text-green-600 transition"
+                  className="capitalize text-white font-bold hover:text-green-600 transition lg:text-[16px]"
                 >
                   {section}
                 </button>
