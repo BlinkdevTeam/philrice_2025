@@ -159,7 +159,7 @@ export default function PosterSection2() {
                   alt={`Poster ${idx}`}
                   width={900}
                   height={0}           // placeholder, won't be used
-                  style={{ height: 'auto' }}
+                  style={{ height: idx === 34 ? '500px' : 'auto' }}
                   className="object-contain"
                   loading="lazy"
                   onClick={() => handleFullscreenImage(src)}
