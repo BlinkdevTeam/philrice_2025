@@ -106,7 +106,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition text-[16px]
+                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-[16px] transition text-[16px]
                 ${
                   isScrolled
                     ? "bg-[#F58A1F] text-white border-[#F58A1F]"
@@ -122,7 +122,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition text-[16px]
+                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-[16px] transition 
                 ${
                   isScrolled
                     ? "bg-[#F58A1F] text-white border-[#F58A1F]"
