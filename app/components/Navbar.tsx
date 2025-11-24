@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   const sections = [
-    "home",
+    // "home",
     "about",
     "speaker",
     "program",
@@ -57,7 +57,7 @@ const Navbar = () => {
             id="navbar-container"
             className={`
           max-w-[1920px] mx-auto flex items-center justify-between
-          px-4 sm:px-6 md:px-10 lg:px-32 xl:px-40
+          px-4 sm:px-6 md:px-10 lg:px-10
           transition-all duration-300
         `}
           >
@@ -72,7 +72,7 @@ const Navbar = () => {
                 alt="Event Logo"
                 className={`
                 h-10 sm:h-12 md:h-14 xl:h-16
-                transition-all duration-300 
+                transition-all duration-300
                 ${isScrolled ? "scale-90" : ""}
               `}
               />
@@ -101,6 +101,22 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
+              
+              <a
+                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`
+                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition
+                ${
+                  isScrolled
+                    ? "bg-[#F58A1F] text-white border-[#F58A1F]"
+                    : "text-[#006872] border-[#006872] hover:bg-[#F58A1F] hover:text-white hover:border-[#F58A1F]"
+                }
+              `}
+              >
+                Souvenir Program
+              </a>
 
               <a
                 href="https://ugnaypalay.philrice.gov.ph:441/csd/37th/registration-form/ABCDefgHI"
@@ -144,7 +160,7 @@ const Navbar = () => {
 
           {/* MOBILE MENU */}
           {isMenuOpen && (
-            <div className="lg:hidden flex flex-col items-center gap-4 py-6 bg-[#006872] text-white">
+            <div className="lg:hidden flex flex-col items-center gap-4 py-6 bg-[#006872] text-white h-[100vh]">
               {sections.map((section) => (
                 <button
                   key={section}
@@ -154,6 +170,14 @@ const Navbar = () => {
                   {section}
                 </button>
               ))}
+
+              <a
+                href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES.pdf"
+                target="_blank"
+                className="uppercase font-bold bg-[#F58A1F] rounded-full px-6 py-3 hover:bg-[#F58A1F] hover:text-white"
+              >
+                Souvenir Program
+              </a>
 
               <a
                 href="https://ugnaypalay.philrice.gov.ph:441/csd/37th/registration-form/ABCDefgHI"
