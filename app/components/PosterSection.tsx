@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -10,9 +10,14 @@ import "../globals.css";
 import { Maximize2 } from "lucide-react";
 import { useRouter } from "next/navigation"; // <-- import useRouter
 
+import { X, ChevronDown } from "lucide-react";
+
+import { group1, group2, group3, group4 } from "../data/posters";
+
 export default function PosterSection() {
-  const posterUrl =
-    "https://sfvideo.blob.core.windows.net/sitefinity/images/default-source/default-album/decoded-temp-image-storage/23-idt-scientific-poster-template-with-labels.jpg?sfvrsn=c6a9f207_6";
+  const [activeTheme, setActivetheme] = useState(1)
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter(); // <-- initialize router
 
@@ -22,6 +27,25 @@ export default function PosterSection() {
   const handleFullscreen = () => {
     router.push("/Posters");
   };
+
+  const handleTheme = (theme: any) => {
+    setActivetheme(theme)
+    setIsOpen(false);
+  }
+
+  const handleDropdown = () => setIsOpen((prev) => !prev);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
 
   return (
     <div className="w-full bg-white flex flex-col items-center justify-start">
@@ -46,11 +70,50 @@ export default function PosterSection() {
               </div> */}
             </button>
           </div>
+          
+          <div className="flex gap-[20px]" ref={dropdownRef}>
+            <div>
+              <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
+                List of <span className="text-[#F58A1F]">Posters</span>
+              </h2>
+              <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
+            </div>
 
-          <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
-            List of <span className="text-[#F58A1F]">Posters</span>
-          </h2>
-          <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
+            <div className="relative pt-[20px]">
+              <div onClick={() => handleDropdown()} className="flex gap-[10px] items-center bg-[#005c46] rounded-full px-[25px] py-[10px]">
+                <h6 className="">{`Theme ${activeTheme}`}</h6>
+                <ChevronDown size={16} />
+              </div>
+              {isOpen && (
+                <div className="absolute bg-white shadow-xl z-[99] rounded-[10px] overflow-hidden mt-2">
+                  <div
+                    onClick={() => handleTheme(1)}
+                    className="bg-white hover:bg-[#cacaca] px-[35px] py-[7px] text-gray-500 cursor-pointer"
+                  >
+                    <h6>Theme 1</h6>
+                  </div>
+                  <div
+                    onClick={() => handleTheme(2)}
+                    className="bg-white hover:bg-[#cacaca] px-[35px] py-[7px] text-gray-500 cursor-pointer"
+                  >
+                    <h6>Theme 2</h6>
+                  </div>
+                  <div
+                    onClick={() => handleTheme(3)}
+                    className="bg-white hover:bg-[#cacaca] px-[35px] py-[7px] text-gray-500 cursor-pointer"
+                  >
+                    <h6>Theme 3</h6>
+                  </div>
+                  <div
+                    onClick={() => handleTheme(4)}
+                    className="bg-white hover:bg-[#cacaca] px-[35px] py-[7px] text-gray-500 cursor-pointer"
+                  >
+                    <h6>Theme 4</h6>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
 
           <Swiper
             effect={"coverflow"}
@@ -69,17 +132,23 @@ export default function PosterSection() {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {/* 5 slides manually */}
-            {[1, 2, 3, 4, 5].map((i) => (
-              <SwiperSlide key={i} className="flex justify-center">
-                <img
-                  src={posterUrl}
-                  className="poster-img"
-                  alt={`Poster ${i}`}
-                />
+            {(
+              activeTheme === 1
+                ? group1
+                : activeTheme === 2
+                ? group2
+                : activeTheme === 3
+                ? group3
+                : activeTheme === 4
+                ? group4
+                : group1
+            ).map((src, idx) => (
+              <SwiperSlide key={idx} className="flex justify-center">
+                <img src={src} className="poster-img" alt={`Poster ${idx}`} />
               </SwiperSlide>
             ))}
           </Swiper>
+
         </div>
       </section>
     </div>
