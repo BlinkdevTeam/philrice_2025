@@ -9,6 +9,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import "../globals.css";
 import { Maximize2 } from "lucide-react";
 import { useRouter } from "next/navigation"; // <-- import useRouter
+import Image from "next/image";
 
 import { X, ChevronDown } from "lucide-react";
 
@@ -144,7 +145,13 @@ export default function PosterSection() {
                 : group1
             ).map((src, idx) => (
               <SwiperSlide key={idx} className="flex justify-center">
-                <img src={src} className="poster-img" alt={`Poster ${idx}`} />
+                <Image 
+                  src={src} className="poster-img" 
+                  alt={`Poster ${idx}`} 
+                  width={700}
+                  height={0}           // placeholder, won't be used
+                  style={{ height: idx === 34 ? '500px' : 'auto' }}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

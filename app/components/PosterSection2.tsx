@@ -177,17 +177,18 @@ export default function PosterSection2() {
           onClick={handleCloseModal}
         >
           <div
-            className="relative max-w-[90%] max-h-[90%] flex items-center justify-center p-12"
+            className="relative w-[100%] h-[100%] flex items-center justify-center p-12"
             onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking image
           >
-            <img
+            <Image
               src={fullscreenUrl}
               alt="Fullscreen Poster"
               className="max-w-full max-h-full object-contain rounded-md"
+              fill
             />
             <button
               onClick={handleCloseModal}
-              className="hidden absolute top-2 -right-12 w-10 h-10 sm:flex items-center justify-center bg-white/20 hover:bg-white/40 text-white rounded-full cursor-pointer"
+              className="hidden absolute bottom-2 right-[20px] w-10 h-10 sm:flex items-center justify-center bg-white/20 hover:bg-white/40 text-white rounded-full cursor-pointer z-[999]"
             >
               <X size={20} />
             </button>
