@@ -48,7 +48,7 @@ const Navbar = () => {
     <>
       <div className="flex flex-col justify-center items-center">
         <nav
-          className={`fixed top-0 w-full h-auto sm:h-[80px] md:h-[88px] z-50 transition-all duration-500 transform py-2 lg:py-0
+          className={`fixed top-0 w-full h-auto py-[10px] z-50 transition-all duration-500 transform
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
         ${isScrolled ? "bg-[#006872] shadow-md" : "bg-transparent"}
       `}
@@ -81,8 +81,7 @@ const Navbar = () => {
             {/* DESKTOP MENU */}
             <div
               id="navbar-links"
-              className={`hidden lg:flex gap-6 xl:gap-10 items-center transition-all duration-300 ${
-                isScrolled ? "mt-4.5" : "mt-5"
+              className={`hidden lg:flex gap-6 xl:gap-10 items-center transition-all duration-300
               }`}
             >
               <ul className="flex items-center gap-4 xl:gap-8">
@@ -107,7 +106,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition
+                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition text-[16px]
                 ${
                   isScrolled
                     ? "bg-[#F58A1F] text-white border-[#F58A1F]"
@@ -123,7 +122,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition
+                uppercase font-bold border rounded-full px-6 py-2 xl:px-8 xl:py-3 text-sm xl:text-lg transition text-[16px]
                 ${
                   isScrolled
                     ? "bg-[#F58A1F] text-white border-[#F58A1F]"
