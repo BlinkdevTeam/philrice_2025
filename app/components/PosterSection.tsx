@@ -72,15 +72,15 @@ export default function PosterSection() {
             </button>
           </div>
           
-          <div className="flex gap-[20px]" ref={dropdownRef}>
+          <div className="flex gap-[20px] flex-col md:flex-row pb-[50px] md:pb-[0px]" ref={dropdownRef}>
             <div>
               <h2 className="text-[46px] sm:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
                 List of <span className="text-[#F58A1F]">Posters</span>
               </h2>
-              <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
+              <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-[0px] md:mb-10" />
             </div>
 
-            <div className="relative pt-[20px] hidden md:block">
+            <div className="relative pt-[20px]">
               <div onClick={() => handleDropdown()} className="flex gap-[10px] items-center bg-[#005c46] rounded-full px-[25px] py-[10px]">
                 <h6 className="">{`Theme ${activeTheme}`}</h6>
                 <ChevronDown size={16} />
@@ -115,12 +115,7 @@ export default function PosterSection() {
               )}
             </div>
           </div>
-          <div className="block md:hidden">
-            <div>
-              <p className="text-[#666666] text-center w-[80%] mx-auto">Poster viewing is unavailable on mobile devices. Kindly use a desktop or tablet.</p>
-            </div>
-          </div>
-          <div className="hidden md:block">
+          <div>
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -149,7 +144,10 @@ export default function PosterSection() {
                   ? group4
                   : group1
               ).map((src, idx) => (
-                <SwiperSlide key={idx} className="flex justify-center">
+                <SwiperSlide
+                  key={idx}
+                  className={`flex justify-center ${idx === 34 ? '!h-[200px] md:!h-[500px]' : '!h-auto'} overflow-hidden pb-[50px] md:pb-[50px]`}
+                >
                   <Image 
                     src={src} className="poster-img" 
                     alt={`Poster ${idx}`} 
