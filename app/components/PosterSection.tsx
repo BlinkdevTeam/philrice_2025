@@ -146,14 +146,14 @@ export default function PosterSection() {
               ).map((src, idx) => (
                 <SwiperSlide
                   key={idx}
-                  className={`flex justify-center ${idx === 34 ? '!h-[200px] md:!h-[500px]' : '!h-auto'} overflow-hidden pb-[50px] md:pb-[50px]`}
+                  className={`flex justify-center pb-[50px] md:pb-[50px]`}
                 >
                   <Image 
                     src={src} className="poster-img" 
-                    alt={`Poster ${idx}`} 
+                    alt={`Poster ${idx+1}`} 
                     width={700}
                     height={0}           // placeholder, won't be used
-                    style={{ height: idx === 34 ? '500px' : 'auto' }}
+                    style={{ height: 'auto' }}
                   />
                 </SwiperSlide>
               ))}

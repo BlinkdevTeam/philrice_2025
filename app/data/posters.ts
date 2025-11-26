@@ -1,25 +1,25 @@
 // Group 1 images
 export const group1: string[] = [
   "/assets/posters1/1.jpg",
-  "/assets/posters1/2.png",
+  "/assets/posters1/2.jpg",
   "/assets/posters1/3.jpg",
   "/assets/posters1/4.jpg",
   "/assets/posters1/5.jpg",
   "/assets/posters1/6.jpg",
   "/assets/posters1/7.jpg",
   "/assets/posters1/8.jpg",
-  "/assets/posters1/9.jfif",
-  "/assets/posters1/10.png",
+  "/assets/posters1/9.jpg",
+  "/assets/posters1/10.jpg",
   "/assets/posters1/11.jpg",
   "/assets/posters1/12.jpg",
   "/assets/posters1/13.jpg",
   "/assets/posters1/14.jpg",
   "/assets/posters1/15.jpg",
-  "/assets/posters1/16.png",
+  "/assets/posters1/16.jpg",
   "/assets/posters1/17.jpg",
   "/assets/posters1/18.jpg",
   "/assets/posters1/19.jpg",
-  "/assets/posters1/20.jpeg",
+  "/assets/posters1/20.jpg",
   "/assets/posters1/21.jpg",
   "/assets/posters1/22.jpg",
   "/assets/posters1/23.jpg",
@@ -29,7 +29,7 @@ export const group1: string[] = [
   "/assets/posters1/27.jpg",
   "/assets/posters1/28.jpg",
   "/assets/posters1/29.jpg",
-  "/assets/posters1/30.png",
+  "/assets/posters1/30.jpg",
   "/assets/posters1/31.jpg",
   "/assets/posters1/32.jpg",
   "/assets/posters1/33.jpg",
@@ -39,7 +39,7 @@ export const group1: string[] = [
 
 // Group 2 images
 export const group2: string[] = [
-  "/assets/posters2/1.png",
+  "/assets/posters2/1.jpg",
   "/assets/posters2/2.jpg",
   "/assets/posters2/3.jpg",
   "/assets/posters2/4.jpg",
@@ -55,13 +55,13 @@ export const group2: string[] = [
 
 // Group 3 images
 export const group3: string[] = [
-  "/assets/posters3/1.png",
+  "/assets/posters3/1.jpg",
   "/assets/posters3/2.jpg",
-  "/assets/posters3/3.png",
+  "/assets/posters3/3.jpg",
   "/assets/posters3/4.jpg",
   "/assets/posters3/5.jpg",
   "/assets/posters3/6.jpg",
-  "/assets/posters3/7.png",
+  "/assets/posters3/7.jpg",
   "/assets/posters3/8.jpg",
   "/assets/posters3/9.jpg",
 ];
@@ -69,7 +69,7 @@ export const group3: string[] = [
 // Group 4 images
 export const group4: string[] = [
   "/assets/posters4/1.jpg",
-  "/assets/posters4/2.png",
+  "/assets/posters4/2.jpg",
   "/assets/posters4/3.jpg",
   "/assets/posters4/4.jpg",
   "/assets/posters4/5.jpg",

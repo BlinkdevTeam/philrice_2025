@@ -156,10 +156,10 @@ export default function PosterSection2() {
               <SwiperSlide key={idx} className="relative w-full flex justify-center">
                 <Image
                   src={src}
-                  alt={`Poster ${idx}`}
+                  alt={`Poster ${idx+1}`}
                   width={900}
                   height={0}           // placeholder, won't be used
-                  style={{ height: idx === 34 ? '500px' : 'auto' }}
+                  style={{ height: 'auto' }}
                   className="object-contain"
                   loading="lazy"
                   onClick={() => handleFullscreenImage(src)}
