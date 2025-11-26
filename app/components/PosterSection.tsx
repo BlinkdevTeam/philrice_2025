@@ -80,7 +80,7 @@ export default function PosterSection() {
               <div className="w-full md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
             </div>
 
-            <div className="relative pt-[20px]">
+            <div className="relative pt-[20px] hidden md:block">
               <div onClick={() => handleDropdown()} className="flex gap-[10px] items-center bg-[#005c46] rounded-full px-[25px] py-[10px]">
                 <h6 className="">{`Theme ${activeTheme}`}</h6>
                 <ChevronDown size={16} />
@@ -115,46 +115,52 @@ export default function PosterSection() {
               )}
             </div>
           </div>
-
-          <Swiper
-            effect={"coverflow"}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={"auto"}
-            loop={true}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 1920,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
-            className="mySwiper"
-          >
-            {(
-              activeTheme === 1
-                ? group1
-                : activeTheme === 2
-                ? group2
-                : activeTheme === 3
-                ? group3
-                : activeTheme === 4
-                ? group4
-                : group1
-            ).map((src, idx) => (
-              <SwiperSlide key={idx} className="flex justify-center">
-                <Image 
-                  src={src} className="poster-img" 
-                  alt={`Poster ${idx}`} 
-                  width={700}
-                  height={0}           // placeholder, won't be used
-                  style={{ height: idx === 34 ? '500px' : 'auto' }}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="block md:hidden">
+            <div>
+              <p className="text-[#666666] text-center w-[80%] mx-auto">Poster viewing is unavailable on mobile devices. Kindly use a desktop or tablet.</p>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={"auto"}
+              loop={true}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 1920,
+                modifier: 1,
+                slideShadows: false,
+              }}
+              pagination={{ clickable: true }}
+              modules={[EffectCoverflow, Pagination]}
+              className="mySwiper"
+            >
+              {(
+                activeTheme === 1
+                  ? group1
+                  : activeTheme === 2
+                  ? group2
+                  : activeTheme === 3
+                  ? group3
+                  : activeTheme === 4
+                  ? group4
+                  : group1
+              ).map((src, idx) => (
+                <SwiperSlide key={idx} className="flex justify-center">
+                  <Image 
+                    src={src} className="poster-img" 
+                    alt={`Poster ${idx}`} 
+                    width={700}
+                    height={0}           // placeholder, won't be used
+                    style={{ height: idx === 34 ? '500px' : 'auto' }}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
         </div>
       </section>
