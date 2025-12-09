@@ -21,7 +21,7 @@ const Navbar = () => {
     "speaker",
     "program",
     "venue",
-    "posters",
+    // "posters",
     "faqs",
   ];
 
@@ -100,7 +100,7 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <a
                 href="https://shvutlcgljqiidqxqrru.supabase.co/storage/v1/object/public/Philrice%20Souvenir%20Program/PHILRICE_37TH%20UGNAY%20PALAY_SOUVENIR%20PROGRAM_PAGES%20(1).pdf"
                 target="_blank"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef , useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -14,7 +14,7 @@ import { group1, group2, group3, group4 } from "../data/posters";
 import Image from "next/image";
 
 export default function PosterSection2() {
-  const [activeTheme, setActivetheme] = useState(1)
+  // const [activeTheme, setActivetheme] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -40,23 +40,28 @@ export default function PosterSection2() {
     setFullscreenUrl(null);
   };
 
-   const handleTheme = (theme: any) => {
-      setActivetheme(theme)
-      setIsOpen(false);
-    }
-  
-    const handleDropdown = () => setIsOpen((prev) => !prev);
-  
-    // Close dropdown when clicking outside
-    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-          setIsOpen(false);
-        }
-      };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+  const [activeTheme, setActivetheme] = useState<1 | 2 | 3 | 4>(1);
+
+  const handleTheme = (theme: 1 | 2 | 3 | 4) => {
+    setActivetheme(theme);
+    setIsOpen(false);
+  };
+
+  const handleDropdown = () => setIsOpen((prev) => !prev);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="w-screen h-screen bg-white flex flex-col items-center justify-center">
@@ -83,14 +88,17 @@ export default function PosterSection2() {
 
           <div className="flex gap-[20px]" ref={dropdownRef}>
             <div>
-                <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
-                  List of <span className="text-[#F58A1F]">Posters</span>
-                </h2>
-                <div className="w-[200px] md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
+              <h2 className="text-3xl md:text-[55px] text-[#006872] leading-tight md:leading-[60px] text-left">
+                List of <span className="text-[#F58A1F]">Posters</span>
+              </h2>
+              <div className="w-[200px] md:w-[373px] h-[3px] bg-[#F58A1F] mt-4 md:mt-[26px] mb-10" />
             </div>
 
             <div className="relative pt-[20px]">
-              <div onClick={() => handleDropdown()} className="flex gap-[10px] items-center bg-[#005c46] rounded-full px-[25px] py-[10px]">
+              <div
+                onClick={() => handleDropdown()}
+                className="flex gap-[10px] items-center bg-[#005c46] rounded-full px-[25px] py-[10px]"
+              >
                 <h6 className="">{`Theme ${activeTheme}`}</h6>
                 <ChevronDown size={16} />
               </div>
@@ -142,24 +150,26 @@ export default function PosterSection2() {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {(
-              activeTheme === 1
-                ? group1
-                : activeTheme === 2
-                ? group2
-                : activeTheme === 3
-                ? group3
-                : activeTheme === 4
-                ? group4
-                : group1
+            {(activeTheme === 1
+              ? group1
+              : activeTheme === 2
+              ? group2
+              : activeTheme === 3
+              ? group3
+              : activeTheme === 4
+              ? group4
+              : group1
             ).map((src, idx) => (
-              <SwiperSlide key={idx} className="relative w-full flex justify-center">
+              <SwiperSlide
+                key={idx}
+                className="relative w-full flex justify-center"
+              >
                 <Image
                   src={src}
-                  alt={`Poster ${idx+1}`}
+                  alt={`Poster ${idx + 1}`}
                   width={900}
-                  height={0}           // placeholder, won't be used
-                  style={{ height: 'auto' }}
+                  height={0} // placeholder, won't be used
+                  style={{ height: "auto" }}
                   className="object-contain"
                   loading="lazy"
                   onClick={() => handleFullscreenImage(src)}
